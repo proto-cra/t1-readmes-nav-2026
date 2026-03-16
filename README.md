@@ -78,9 +78,9 @@ flowchart TD;
     click node12 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2018/manitoba.html" _blank
     click node13 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2024.html" _blank
     click node14 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2024/alberta.html" _blank
-    click node15 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/5000-s2.html" _blank
-    click node16 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/5000-r.html" _blank
-    click node17 "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/alberta/5009-r.html" _blank
+    click node15 "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/5000-s2.html" _blank
+    click node16 "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/5000-r.html" _blank
+    click node17 "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/5009-r.html" _blank
     classDef inscope stroke:#7636ab,stroke-width:3px
     class node4,node5,node6,node7,node9,node10,node11,node12,node13,node14,node15,node16,node17 inscope
     classDef ismoved fill:#eab308,color:#000
