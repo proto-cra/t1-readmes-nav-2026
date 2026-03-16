@@ -1,0 +1,101 @@
+{
+  "data": [{
+      "year": "2024",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2023",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2022",
+      "fill_pdf_en": ["5008-s12-fill-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-fill-22e.pdf"],
+      "fill_pdf_fr": ["5008-s12-fill-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-fill-22f.pdf"],
+      "stnd_pdf_en": ["5008-s12-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-22e.pdf"],
+      "stnd_pdf_fr": ["5008-s12-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-22f.pdf"],
+      "lrge_pdf_en": ["5008-s12-lp-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-lp-22e.pdf"],
+      "lrge_pdf_fr": ["5008-s12-lp-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-lp-22f.pdf"],
+      "dwld_etx_en": ["5008-s12-22e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-22e.txt"],
+      "dwld_etx_fr": ["5008-s12-22f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-22f.txt"]
+    },
+    {
+      "year": "2021",
+      "fill_pdf_en": ["5008-s12-fill-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-fill-21e.pdf"],
+      "fill_pdf_fr": ["5008-s12-fill-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-fill-21f.pdf"],
+      "stnd_pdf_en": ["5008-s12-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-21e.pdf"],
+      "stnd_pdf_fr": ["5008-s12-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-21f.pdf"],
+      "lrge_pdf_en": ["5008-s12-lp-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-lp-21e.pdf"],
+      "lrge_pdf_fr": ["5008-s12-lp-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-lp-21f.pdf"],
+      "dwld_etx_en": ["5008-s12-21e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-21e.txt"],
+      "dwld_etx_fr": ["5008-s12-21f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s12/5008-s12-21f.txt"]
+    },
+    {
+      "year": "2020",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2019",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2018",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2017",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    },
+    {
+      "year": "2016",
+      "fill_pdf_en": ["Not applicable"],
+      "fill_pdf_fr": ["Pas applicable"],
+      "stnd_pdf_en": ["Not applicable"],
+      "stnd_pdf_fr": ["Pas applicable"],
+      "lrge_pdf_en": ["Not applicable"],
+      "lrge_pdf_fr": ["Pas applicable"],
+      "dwld_etx_en": ["Not applicable"],
+      "dwld_etx_fr": ["Pas applicable"]
+    }]
+}

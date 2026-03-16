@@ -1,0 +1,15 @@
+<section id="lac-en">
+  <h3>Access tax packages older than 10 years</h3>
+  <p>Tax packages are preserved by Library and Archives Canada within the Government of Canada Web Archive.</p>
+  <ul>
+    <li><a href="https://webarchiveweb.wayback.bac-lac.canada.ca/web/20250403094844/https:/www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years.html" target="_blank" rel="noopener noreferrer">Archived tax packages older than 10 years (Government of Canada Web Archive website)</a></li>
+  </ul>
+</section>
+
+<section id="lac-fr">
+  <h3>Accédez aux trousses d’impôt de plus de 10 ans</h3>
+  <p>Les trousses d’impôt sont conservées par Bibliothèque et Archives Canada dans les Archives Web du gouvernement du Canada.</p>
+  <ul>
+    <li><a href="https://webarchiveweb.wayback.bac-lac.canada.ca/web/20250404030716/https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html" target="_blank" rel="noopener noreferrer">Trousses d’impôt de plus de 10 ans archivées (site Web Archives Web du gouvernement du Canada)</a></li>
+  </ul>
+</section>
