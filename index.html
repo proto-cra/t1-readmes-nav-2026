@@ -34,7 +34,10 @@ noFooterMain: true
   "pages": [
 {% assign separator = "" %}
 {% for p in sitePages %}
-{% unless p.url == "/index.html" %}
+{% unless p.url == "/index.html"
+  or p.url == "/404.html"
+  or p.url == "/source/exit-intent-e.html"
+  or p.url == "/source/exit-intent-f.html" %}
 {{ separator }}    {
       "url": {{ p.url | jsonify }},
       "label": {{ p.title | default: p.url | jsonify }}
@@ -93,16 +96,17 @@ function renderTree(node) {
   const folderNames = [...node.folders.keys()].sort((a, b) => a.localeCompare(b));
   for (const folderName of folderNames) {
     const folder = node.folders.get(folderName);
+    const collapsedFolder = collapseFolder(folder);
     const item = document.createElement("li");
     const details = document.createElement("details");
     const summary = document.createElement("summary");
     const code = document.createElement("code");
 
-    details.open = folder.path.split("/").length <= 2;
-    code.textContent = folderName;
+    details.open = collapsedFolder.path.split("/").length <= 2;
+    code.textContent = collapsedFolder.label;
     summary.appendChild(code);
     details.appendChild(summary);
-    details.appendChild(renderTree(folder));
+    details.appendChild(renderTree(collapsedFolder.node));
     item.appendChild(details);
     list.appendChild(item);
   }
@@ -119,6 +123,23 @@ function renderTree(node) {
   }
 
   return list;
+}
+
+function collapseFolder(folder) {
+  const names = [folder.name];
+  let current = folder;
+
+  while (current.pages.length === 0 && current.folders.size === 1) {
+    const [nextName, nextFolder] = [...current.folders.entries()][0];
+    names.push(nextName);
+    current = nextFolder;
+  }
+
+  return {
+    label: names.join("/"),
+    node: current,
+    path: current.path
+  };
 }
 
 document.getElementById("page-hierarchy").appendChild(renderTree(root));
