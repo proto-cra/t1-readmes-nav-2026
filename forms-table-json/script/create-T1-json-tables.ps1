@@ -12,7 +12,8 @@ Logic Map
 4) Optional pause/stop before link checking for manual inspection.
 5) Phase 2: For each generated form JSON, validate EN/FR pairs:
    - Normalize existing "Not available" (NA) markers to symmetric EN+FR NA.
-   - Validate generated EN+FR URLs (HEAD -> GET, status 200-399).
+   - Validate generated EN+FR URLs (HEAD -> GET, follow redirects, final 2xx).
+   - Retry transient failures with backoff before marking unavailable.
    - If either side fails, mark pair as EN+FR NA.
    - If all bilingual pairs in a year row are NA, rewrite that whole row as
      "Not applicable" / "Pas applicable".
@@ -25,6 +26,10 @@ param(
   [string]$TemplatePath = ".\\template-table-data.json",
   [string]$OutputDir,
   [int]$TimeoutSec = 12,
+  [int]$RequestDelayMs = 0,
+  [int]$RetryCount = 2,
+  [int]$RetryDelayMs = 500,
+  [int]$MaxRedirects = 8,
   [switch]$GenerateOnly,
   [switch]$PauseBeforeLinkCheck,
   [switch]$DryRun
@@ -174,13 +179,20 @@ function Write-TextFileWithEncoding {
 }
 
 # URL validator used by link-check logic.
-# Behavior intentionally mirrors the HTML workflow:
+# Behavior:
 # - Try HEAD first
 # - If HEAD fails, try GET
-# - Count as valid on HTTP 200-399
-# - No retry/backoff here (caller controls timeout only)
+# - Follow redirects and require final HTTP 2xx
+# - Retry transient failures with configurable backoff
 function Test-Url200 {
-  param([Parameter(Mandatory)] [string]$Url, [int]$TimeoutSec = 10)
+  param(
+    [Parameter(Mandatory)] [string]$Url,
+    [int]$TimeoutSec = 10,
+    [int]$RequestDelayMs = 0,
+    [int]$RetryCount = 2,
+    [int]$RetryDelayMs = 500,
+    [int]$MaxRedirects = 8
+  )
 
   function Get-HttpStatusFromError {
     param([Parameter(Mandatory)] $ErrorRecord)
@@ -195,22 +207,90 @@ function Test-Url200 {
     return $null
   }
 
-  try {
-    $resp = Invoke-WebRequest -Uri $Url -Method Head -TimeoutSec $TimeoutSec -MaximumRedirection 0 -ErrorAction Stop
-    if ($resp.StatusCode -ge 200 -and $resp.StatusCode -le 399) { return $true }
-  } catch {
-    $headStatus = Get-HttpStatusFromError -ErrorRecord $_
-    if ($headStatus -ge 200 -and $headStatus -le 399) { return $true }
+  function Get-FinalResponseUri {
+    param($Response)
+    try {
+      if ($null -ne $Response.BaseResponse.ResponseUri) {
+        return [string]$Response.BaseResponse.ResponseUri.AbsoluteUri
+      }
+    } catch {
+      return $null
+    }
+    return $null
   }
 
-  try {
-    $resp2 = Invoke-WebRequest -Uri $Url -Method Get -TimeoutSec $TimeoutSec -MaximumRedirection 0 -ErrorAction Stop
-    if ($resp2.StatusCode -ge 200 -and $resp2.StatusCode -le 399) { return $true }
-  } catch {
-    $getStatus = Get-HttpStatusFromError -ErrorRecord $_
-    if ($getStatus -ge 200 -and $getStatus -le 399) { return $true }
-    return $false
+  function Is-TransientHttpStatus {
+    param([Nullable[int]]$StatusCode)
+    if ($null -eq $StatusCode) { return $true }
+    return $StatusCode -in @(408, 429, 500, 502, 503, 504)
   }
+
+  function Invoke-UrlAttempt {
+    param(
+      [Parameter(Mandatory)] [string]$AttemptUrl,
+      [Parameter(Mandatory)] [string]$Method,
+      [int]$AttemptTimeoutSec,
+      [int]$AttemptRequestDelayMs,
+      [int]$AttemptRetryCount,
+      [int]$AttemptRetryDelayMs,
+      [int]$AttemptMaxRedirects
+    )
+
+    for ($attempt = 0; $attempt -le $AttemptRetryCount; $attempt++) {
+      if ($AttemptRequestDelayMs -gt 0) {
+        Start-Sleep -Milliseconds $AttemptRequestDelayMs
+      }
+
+      try {
+        $response = Invoke-WebRequest -Uri $AttemptUrl -Method $Method -TimeoutSec $AttemptTimeoutSec -MaximumRedirection $AttemptMaxRedirects -ErrorAction Stop
+        $statusCode = [int]$response.StatusCode
+        $finalUrl = Get-FinalResponseUri -Response $response
+        return [pscustomobject]@{
+          Success         = ($statusCode -ge 200 -and $statusCode -le 299)
+          StatusCode      = $statusCode
+          FinalUrl        = $finalUrl
+          Retryable       = $false
+          Method          = $Method
+          Redirected      = ($null -ne $finalUrl -and $finalUrl -ne $AttemptUrl)
+        }
+      } catch {
+        $statusCode = Get-HttpStatusFromError -ErrorRecord $_
+        $retryable = Is-TransientHttpStatus -StatusCode $statusCode
+        if ($retryable -and $attempt -lt $AttemptRetryCount) {
+          $sleepMs = $AttemptRetryDelayMs * [math]::Pow(2, $attempt)
+          if ($sleepMs -gt 0) {
+            Start-Sleep -Milliseconds ([int][math]::Round($sleepMs))
+          }
+          continue
+        }
+
+        return [pscustomobject]@{
+          Success         = $false
+          StatusCode      = $statusCode
+          FinalUrl        = $null
+          Retryable       = $retryable
+          Method          = $Method
+          Redirected      = $false
+        }
+      }
+    }
+
+    return [pscustomobject]@{
+      Success         = $false
+      StatusCode      = $null
+      FinalUrl        = $null
+      Retryable       = $true
+      Method          = $Method
+      Redirected      = $false
+    }
+  }
+
+  $headResult = Invoke-UrlAttempt -AttemptUrl $Url -Method Head -AttemptTimeoutSec $TimeoutSec -AttemptRequestDelayMs $RequestDelayMs -AttemptRetryCount $RetryCount -AttemptRetryDelayMs $RetryDelayMs -AttemptMaxRedirects $MaxRedirects
+  if ($headResult.Success -and -not $headResult.Redirected) { return $true }
+
+  $getResult = Invoke-UrlAttempt -AttemptUrl $Url -Method Get -AttemptTimeoutSec $TimeoutSec -AttemptRequestDelayMs $RequestDelayMs -AttemptRetryCount $RetryCount -AttemptRetryDelayMs $RetryDelayMs -AttemptMaxRedirects $MaxRedirects
+  if ($getResult.Success) { return $true }
+
   return $false
 }
 
@@ -523,8 +603,8 @@ foreach ($form in $formsForGeneration) {
       # Primary pass: validate links exactly as listed in template/output.
       $enValid = $false
       $frValid = $false
-      if ($enUrl) { $enValid = Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec }
-      if ($frUrl) { $frValid = Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec }
+      if ($enUrl) { $enValid = Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects }
+      if ($frUrl) { $frValid = Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects }
 
       # If only FR failed and it uses the historical 51xx token, try 50xx fallback.
       if ($enValid -and -not $frValid) {
@@ -532,7 +612,7 @@ foreach ($form in $formsForGeneration) {
         if ($null -ne $frFallbackPair) {
           $frFallbackUrl = Get-LinkUrl -Value $frFallbackPair
           $frFallbackValid = $false
-          if ($frFallbackUrl) { $frFallbackValid = Test-Url200 -Url $frFallbackUrl -TimeoutSec $TimeoutSec }
+          if ($frFallbackUrl) { $frFallbackValid = Test-Url200 -Url $frFallbackUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects }
           if ($frFallbackValid) {
             Set-PairInRowAndJson -Row $row -YearValue $yearValue -EnKey $enKey -EnValue @($enVal) -FrKey $frKey -FrValue @($frFallbackPair) -JsonTextRef ([ref]$outJsonFinal)
             $changedPairs++
