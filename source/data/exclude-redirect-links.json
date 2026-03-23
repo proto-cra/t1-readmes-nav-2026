@@ -44,6 +44,10 @@
     "destination": "/t1-readmes-nav-2026/en/revenue-agency/services/forms-publications/forms/5009-r.html"
   },
   {
+    "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html", 
+    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html"
+  }, 
+  {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba/5007-pc.html", 
     "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba/5007-pc.html"
   }
