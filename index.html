@@ -23,11 +23,12 @@ noFooterMain: true
 
 <section class="mrgn-tp-lg">
     <h2>Page hierarchy</h2>
-    <p>Folders are grouped by URL path. Page links use each page's front matter <code>title</code>.</p>
+    <p>Folders are grouped by URL path. English and French are shown side by side. Page links use each page's front matter <code>title</code>.</p>
     <div id="page-hierarchy"></div>
 </section>
 
 {% assign sitePages = site.pages | sort: "url" %}
+{% assign sourceDataFiles = site.static_files | where_exp: "item", "item.path contains '/source/data/'" | sort: "path" %}
 <script id="page-hierarchy-data" type="application/json">
 {
   "baseUrl": {{ site.baseurl | jsonify }},
@@ -45,6 +46,13 @@ noFooterMain: true
 {% assign separator = "," %}
 {% endunless %}
 {% endfor %}
+{% for f in sourceDataFiles %}
+{{ separator }}    {
+      "url": {{ f.path | jsonify }},
+      "label": {{ f.name | jsonify }}
+    }
+{% assign separator = "," %}
+{% endfor %}
   ]
 }
 </script>
@@ -54,6 +62,10 @@ const pageHierarchyData = JSON.parse(
   document.getElementById("page-hierarchy-data").textContent
 );
 const { baseUrl, pages } = pageHierarchyData;
+const languageColumns = [
+  { key: "en", title: "English" },
+  { key: "fr", title: "French" }
+];
 
 function createNode(name, path) {
   return {
@@ -97,28 +109,80 @@ function renderTree(node) {
   for (const folderName of folderNames) {
     const folder = node.folders.get(folderName);
     const collapsedFolder = collapseFolder(folder);
-    const item = document.createElement("li");
-    const code = document.createElement("code");
-    const childTree = renderTree(collapsedFolder.node);
-
-    code.textContent = collapsedFolder.label;
-    if (collapsedFolder.path === "source/data") {
-      const details = document.createElement("details");
-      const summary = document.createElement("summary");
-
-      summary.appendChild(code);
-      details.appendChild(summary);
-      details.appendChild(childTree);
-      item.appendChild(details);
-    } else {
-      item.appendChild(code);
-      item.appendChild(childTree);
-    }
-
-    list.appendChild(item);
+    list.appendChild(renderFolderItem(collapsedFolder));
   }
 
-  const sortedPages = [...node.pages].sort((a, b) => a.label.localeCompare(b.label));
+  const pagesList = renderPages(node.pages);
+  while (pagesList.firstChild) {
+    list.appendChild(pagesList.firstChild);
+  }
+
+  return list;
+}
+
+function renderLanguageColumns(node) {
+  const row = document.createElement("div");
+  row.className = "row";
+
+  for (const language of languageColumns) {
+    if (!node.folders.has(language.key)) continue;
+
+    const column = document.createElement("section");
+    const heading = document.createElement("h3");
+    column.className = "col-md-6";
+    heading.textContent = language.title;
+    column.appendChild(heading);
+    column.appendChild(renderTree(node.folders.get(language.key)));
+    row.appendChild(column);
+  }
+
+  return row;
+}
+
+function renderOtherRootContent(node) {
+  const wrapper = document.createDocumentFragment();
+  const otherFolders = [...node.folders.keys()].filter(
+    (folderName) => !languageColumns.some((language) => language.key === folderName)
+  );
+
+  if (otherFolders.length > 0) {
+    const section = document.createElement("section");
+    const heading = document.createElement("h3");
+    const list = document.createElement("ul");
+
+    section.className = "mrgn-tp-lg";
+    heading.textContent = "Other content";
+    list.className = "lst-spcd";
+
+    for (const folderName of otherFolders.sort((a, b) => a.localeCompare(b))) {
+      const folder = node.folders.get(folderName);
+      const collapsedFolder = collapseFolder(folder);
+      list.appendChild(renderFolderItem(collapsedFolder));
+    }
+
+    section.appendChild(heading);
+    section.appendChild(list);
+    wrapper.appendChild(section);
+  }
+
+  if (node.pages.length > 0) {
+    const section = document.createElement("section");
+    const heading = document.createElement("h3");
+    heading.textContent = "Top-level pages";
+    section.className = "mrgn-tp-lg";
+    section.appendChild(heading);
+    section.appendChild(renderPages(node.pages));
+    wrapper.appendChild(section);
+  }
+
+  return wrapper;
+}
+
+function renderPages(pagesToRender) {
+  const list = document.createElement("ul");
+  list.className = "lst-spcd";
+
+  const sortedPages = [...pagesToRender].sort((a, b) => a.label.localeCompare(b.label));
   for (const page of sortedPages) {
     const item = document.createElement("li");
     const link = document.createElement("a");
@@ -130,6 +194,28 @@ function renderTree(node) {
   }
 
   return list;
+}
+
+function renderFolderItem(collapsedFolder) {
+  const item = document.createElement("li");
+  const code = document.createElement("code");
+  const childTree = renderTree(collapsedFolder.node);
+
+  code.textContent = collapsedFolder.label;
+  if (collapsedFolder.path === "source/data") {
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+
+    summary.appendChild(code);
+    details.appendChild(summary);
+    details.appendChild(childTree);
+    item.appendChild(details);
+  } else {
+    item.appendChild(code);
+    item.appendChild(childTree);
+  }
+
+  return item;
 }
 
 function collapseFolder(folder) {
@@ -149,5 +235,7 @@ function collapseFolder(folder) {
   };
 }
 
-document.getElementById("page-hierarchy").appendChild(renderTree(root));
+const pageHierarchy = document.getElementById("page-hierarchy");
+pageHierarchy.appendChild(renderLanguageColumns(root));
+pageHierarchy.appendChild(renderOtherRootContent(root));
 </script>
