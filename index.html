@@ -22,14 +22,17 @@ noFooterMain: true
 </div>
 
 <section class="mrgn-tp-lg">
-    <h2>Page hierarchy</h2>
-    <p>Folders are grouped by URL path. English and French are shown side by side. Page links use each page's front matter <code>title</code>.</p>
     <div id="page-hierarchy"></div>
 </section>
 
 <style>
 .sitemap-list {
   list-style: none;
+}
+
+#page-hierarchy > .row > section > .sitemap-list,
+#page-hierarchy > section > .sitemap-list {
+  padding-left: 0;
 }
 </style>
 
@@ -69,8 +72,8 @@ const pageHierarchyData = JSON.parse(
 );
 const { baseUrl, pages } = pageHierarchyData;
 const languageColumns = [
-  { key: "en", title: "English" },
-  { key: "fr", title: "French" }
+  { key: "en" },
+  { key: "fr" }
 ];
 
 function createNode(name, path) {
@@ -134,10 +137,7 @@ function renderLanguageColumns(node) {
     if (!node.folders.has(language.key)) continue;
 
     const column = document.createElement("section");
-    const heading = document.createElement("h3");
     column.className = "col-md-6";
-    heading.textContent = language.title;
-    column.appendChild(heading);
     column.appendChild(renderTree(node.folders.get(language.key)));
     row.appendChild(column);
   }
