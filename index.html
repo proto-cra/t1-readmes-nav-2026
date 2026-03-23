@@ -20,9 +20,97 @@ noFooterMain: true
         </ul>
     </div>
 </div>
-<ul>
+
+<section class="mrgn-tp-lg">
+    <h2>Page hierarchy</h2>
+    <p>Folders are grouped by URL path. Page links use each page's front matter <code>title</code>.</p>
+    <div id="page-hierarchy"></div>
+</section>
+
 {% assign sitePages = site.pages | sort: "url" %}
+<script>
+const baseUrl = {{ site.baseurl | jsonify }};
+const pages = [
+{% assign separator = "" %}
 {% for p in sitePages %}
-    <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title | default: p.url }}</a></li>
+{% unless p.url == "/index.html" %}
+{{ separator }}{
+  url: {{ p.url | jsonify }},
+  label: {{ p.title | default: p.url | jsonify }}
+}
+{% assign separator = "," %}
+{% endunless %}
 {% endfor %}
-</ul>
+];
+
+function createNode(name, path) {
+  return {
+    name,
+    path,
+    folders: new Map(),
+    pages: []
+  };
+}
+
+function getFolder(node, name) {
+  if (!node.folders.has(name)) {
+    const nextPath = node.path ? `${node.path}/${name}` : name;
+    node.folders.set(name, createNode(name, nextPath));
+  }
+  return node.folders.get(name);
+}
+
+const root = createNode("", "");
+
+for (const page of pages) {
+  const trimmedUrl = page.url.replace(/^\/+|\/+$/g, "");
+  if (!trimmedUrl) continue;
+
+  const parts = trimmedUrl.split("/");
+  parts.pop();
+
+  let cursor = root;
+  for (const part of parts) {
+    cursor = getFolder(cursor, part);
+  }
+
+  cursor.pages.push(page);
+}
+
+function renderTree(node) {
+  const list = document.createElement("ul");
+  list.className = "lst-spcd";
+
+  const folderNames = [...node.folders.keys()].sort((a, b) => a.localeCompare(b));
+  for (const folderName of folderNames) {
+    const folder = node.folders.get(folderName);
+    const item = document.createElement("li");
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    const code = document.createElement("code");
+
+    details.open = folder.path.split("/").length <= 2;
+    code.textContent = folderName;
+    summary.appendChild(code);
+    details.appendChild(summary);
+    details.appendChild(renderTree(folder));
+    item.appendChild(details);
+    list.appendChild(item);
+  }
+
+  const sortedPages = [...node.pages].sort((a, b) => a.label.localeCompare(b.label));
+  for (const page of sortedPages) {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+
+    link.href = `${baseUrl}${page.url}`;
+    link.textContent = page.label || page.url;
+    item.appendChild(link);
+    list.appendChild(item);
+  }
+
+  return list;
+}
+
+document.getElementById("page-hierarchy").appendChild(renderTree(root));
+</script>
