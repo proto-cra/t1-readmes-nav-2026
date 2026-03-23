@@ -28,20 +28,29 @@ noFooterMain: true
 </section>
 
 {% assign sitePages = site.pages | sort: "url" %}
-<script>
-const baseUrl = {{ site.baseurl | jsonify }};
-const pages = [
+<script id="page-hierarchy-data" type="application/json">
+{
+  "baseUrl": {{ site.baseurl | jsonify }},
+  "pages": [
 {% assign separator = "" %}
 {% for p in sitePages %}
 {% unless p.url == "/index.html" %}
-{{ separator }}{
-  url: {{ p.url | jsonify }},
-  label: {{ p.title | default: p.url | jsonify }}
-}
+{{ separator }}    {
+      "url": {{ p.url | jsonify }},
+      "label": {{ p.title | default: p.url | jsonify }}
+    }
 {% assign separator = "," %}
 {% endunless %}
 {% endfor %}
-];
+  ]
+}
+</script>
+
+<script>
+const pageHierarchyData = JSON.parse(
+  document.getElementById("page-hierarchy-data").textContent
+);
+const { baseUrl, pages } = pageHierarchyData;
 
 function createNode(name, path) {
   return {
