@@ -67,35 +67,35 @@
     },
     {
       "year": "2018",
-      "fill_pdf_en": ["5000-s1-fill-18e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-18e.pdf"],
-      "fill_pdf_fr": ["5100-s1-fill-18f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-18f.pdf"],
-      "stnd_pdf_en": ["5000-s1-18e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-18e.pdf"],
-      "stnd_pdf_fr": ["5100-s1-18f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-18f.pdf"],
-      "lrge_pdf_en": ["5000-s1-lp-18e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-18e.pdf"],
-      "lrge_pdf_fr": ["5100-s1-lp-18f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-18f.pdf"],
-      "dwld_etx_en": ["5000-s1-18e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-18e.txt"],
-      "dwld_etx_fr": ["5100-s1-18f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-18f.txt"]
+      "fill_pdf_en": ["2018 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-18e.pdf"],
+      "fill_pdf_fr": ["2018 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-18f.pdf"],
+      "stnd_pdf_en": ["2018 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-18e.pdf"],
+      "stnd_pdf_fr": ["2018 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-18f.pdf"],
+      "lrge_pdf_en": ["2018 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-18e.pdf"],
+      "lrge_pdf_fr": ["2018 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-18f.pdf"],
+      "dwld_etx_en": ["2018 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-18e.txt"],
+      "dwld_etx_fr": ["2018 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-18f.txt"]
     },
     {
       "year": "2017",
-      "fill_pdf_en": ["5000-s1-fill-17e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-17e.pdf"],
-      "fill_pdf_fr": ["5100-s1-fill-17f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-17f.pdf"],
-      "stnd_pdf_en": ["5000-s1-17e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-17e.pdf"],
-      "stnd_pdf_fr": ["5100-s1-17f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-17f.pdf"],
-      "lrge_pdf_en": ["5000-s1-lp-17e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-17e.pdf"],
-      "lrge_pdf_fr": ["5100-s1-lp-17f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-17f.pdf"],
-      "dwld_etx_en": ["5000-s1-17e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-17e.txt"],
-      "dwld_etx_fr": ["5100-s1-17f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-17f.txt"]
+      "fill_pdf_en": ["2017 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-17e.pdf"],
+      "fill_pdf_fr": ["2017 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-17f.pdf"],
+      "stnd_pdf_en": ["2017 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-17e.pdf"],
+      "stnd_pdf_fr": ["2017 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-17f.pdf"],
+      "lrge_pdf_en": ["2017 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-17e.pdf"],
+      "lrge_pdf_fr": ["2017 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-17f.pdf"],
+      "dwld_etx_en": ["2017 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-17e.txt"],
+      "dwld_etx_fr": ["2017 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-17f.txt"]
     },
     {
       "year": "2016",
-      "fill_pdf_en": ["5000-s1-fill-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-16e.pdf"],
-      "fill_pdf_fr": ["5100-s1-fill-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-16f.pdf"],
-      "stnd_pdf_en": ["5000-s1-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-16e.pdf"],
-      "stnd_pdf_fr": ["5100-s1-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-16f.pdf"],
-      "lrge_pdf_en": ["5000-s1-lp-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-16e.pdf"],
-      "lrge_pdf_fr": ["5100-s1-lp-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-16f.pdf"],
-      "dwld_etx_en": ["5000-s1-16e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-16e.txt"],
-      "dwld_etx_fr": ["5100-s1-16f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-16f.txt"]
+      "fill_pdf_en": ["2016 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-fill-16e.pdf"],
+      "fill_pdf_fr": ["2016 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-fill-16f.pdf"],
+      "stnd_pdf_en": ["2016 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-16e.pdf"],
+      "stnd_pdf_fr": ["2016 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-16f.pdf"],
+      "lrge_pdf_en": ["2016 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-lp-16e.pdf"],
+      "lrge_pdf_fr": ["2016 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-lp-16f.pdf"],
+      "dwld_etx_en": ["2016 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5000-s1-16e.txt"],
+      "dwld_etx_fr": ["2016 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s1/5100-s1-16f.txt"]
     }]
 }
