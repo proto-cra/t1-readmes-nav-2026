@@ -23,25 +23,25 @@
     },
     {
       "year": "2022",
-      "fill_pdf_en": ["5006-s12-fill-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-22e.pdf"],
-      "fill_pdf_fr": ["5006-s12-fill-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-22f.pdf"],
-      "stnd_pdf_en": ["5006-s12-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22e.pdf"],
-      "stnd_pdf_fr": ["5006-s12-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22f.pdf"],
-      "lrge_pdf_en": ["5006-s12-lp-22e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-22e.pdf"],
-      "lrge_pdf_fr": ["5006-s12-lp-22f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-22f.pdf"],
-      "dwld_etx_en": ["5006-s12-22e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22e.txt"],
-      "dwld_etx_fr": ["5006-s12-22f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22f.txt"]
+      "fill_pdf_en": ["2022 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-22e.pdf"],
+      "fill_pdf_fr": ["2022 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-22f.pdf"],
+      "stnd_pdf_en": ["2022 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22e.pdf"],
+      "stnd_pdf_fr": ["2022 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22f.pdf"],
+      "lrge_pdf_en": ["2022 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-22e.pdf"],
+      "lrge_pdf_fr": ["2022 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-22f.pdf"],
+      "dwld_etx_en": ["2022 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22e.txt"],
+      "dwld_etx_fr": ["2022 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-22f.txt"]
     },
     {
       "year": "2021",
-      "fill_pdf_en": ["5006-s12-fill-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-21e.pdf"],
-      "fill_pdf_fr": ["5006-s12-fill-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-21f.pdf"],
-      "stnd_pdf_en": ["5006-s12-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21e.pdf"],
-      "stnd_pdf_fr": ["5006-s12-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21f.pdf"],
-      "lrge_pdf_en": ["5006-s12-lp-21e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-21e.pdf"],
-      "lrge_pdf_fr": ["5006-s12-lp-21f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-21f.pdf"],
-      "dwld_etx_en": ["5006-s12-21e.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21e.txt"],
-      "dwld_etx_fr": ["5006-s12-21f.txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21f.txt"]
+      "fill_pdf_en": ["2021 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-21e.pdf"],
+      "fill_pdf_fr": ["2021 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-21f.pdf"],
+      "stnd_pdf_en": ["2021 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21e.pdf"],
+      "stnd_pdf_fr": ["2021 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21f.pdf"],
+      "lrge_pdf_en": ["2021 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-21e.pdf"],
+      "lrge_pdf_fr": ["2021 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-21f.pdf"],
+      "dwld_etx_en": ["2021 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21e.txt"],
+      "dwld_etx_fr": ["2021 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-21f.txt"]
     },
     {
       "year": "2020",
@@ -89,12 +89,12 @@
     },
     {
       "year": "2016",
-      "fill_pdf_en": ["5006-s12-fill-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-16e.pdf"],
-      "fill_pdf_fr": ["5106-s12-fill-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-fill-16f.pdf"],
-      "stnd_pdf_en": ["5006-s12-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-16e.pdf"],
-      "stnd_pdf_fr": ["5106-s12-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-16f.pdf"],
-      "lrge_pdf_en": ["5006-s12-lp-16e.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-16e.pdf"],
-      "lrge_pdf_fr": ["5106-s12-lp-16f.pdf", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-lp-16f.pdf"],
+      "fill_pdf_en": ["2016 - Fillable PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-fill-16e.pdf"],
+      "fill_pdf_fr": ["2016 - PDF à remplir", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-fill-16f.pdf"],
+      "stnd_pdf_en": ["2016 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-16e.pdf"],
+      "stnd_pdf_fr": ["2016 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-16f.pdf"],
+      "lrge_pdf_en": ["2016 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5006-s12-lp-16e.pdf"],
+      "lrge_pdf_fr": ["2016 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s12/5106-s12-lp-16f.pdf"],
       "dwld_etx_en": ["Not available"],
       "dwld_etx_fr": ["Pas disponible"]
     }]
