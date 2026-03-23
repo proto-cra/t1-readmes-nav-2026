@@ -98,16 +98,23 @@ function renderTree(node) {
     const folder = node.folders.get(folderName);
     const collapsedFolder = collapseFolder(folder);
     const item = document.createElement("li");
-    const details = document.createElement("details");
-    const summary = document.createElement("summary");
     const code = document.createElement("code");
+    const childTree = renderTree(collapsedFolder.node);
 
-    details.open = collapsedFolder.path.split("/").length <= 2;
     code.textContent = collapsedFolder.label;
-    summary.appendChild(code);
-    details.appendChild(summary);
-    details.appendChild(renderTree(collapsedFolder.node));
-    item.appendChild(details);
+    if (collapsedFolder.path === "source/data") {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+
+      summary.appendChild(code);
+      details.appendChild(summary);
+      details.appendChild(childTree);
+      item.appendChild(details);
+    } else {
+      item.appendChild(code);
+      item.appendChild(childTree);
+    }
+
     list.appendChild(item);
   }
 
