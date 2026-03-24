@@ -30,6 +30,14 @@ noFooterMain: true
   list-style: none;
 }
 
+.sitemap-list > li {
+  margin-bottom: 0.2em;
+}
+
+#page-hierarchy details > summary {
+  margin-bottom: 0.2em;
+}
+
 #page-hierarchy > .row > section > .sitemap-list,
 #page-hierarchy > section > .sitemap-list {
   padding-left: 0;
@@ -114,16 +122,16 @@ function renderTree(node) {
   const list = document.createElement("ul");
   list.className = "lst-spcd sitemap-list";
 
+  const pagesList = renderPages(node.pages);
+  while (pagesList.firstChild) {
+    list.appendChild(pagesList.firstChild);
+  }
+
   const folderNames = [...node.folders.keys()].sort((a, b) => a.localeCompare(b));
   for (const folderName of folderNames) {
     const folder = node.folders.get(folderName);
     const collapsedFolder = collapseFolder(folder);
     list.appendChild(renderFolderItem(collapsedFolder));
-  }
-
-  const pagesList = renderPages(node.pages);
-  while (pagesList.firstChild) {
-    list.appendChild(pagesList.firstChild);
   }
 
   return list;
@@ -151,6 +159,16 @@ function renderOtherRootContent(node) {
     (folderName) => !languageColumns.some((language) => language.key === folderName)
   );
 
+  if (node.pages.length > 0) {
+    const section = document.createElement("section");
+    const heading = document.createElement("h3");
+    heading.textContent = "Top-level pages";
+    section.className = "mrgn-tp-lg";
+    section.appendChild(heading);
+    section.appendChild(renderPages(node.pages));
+    wrapper.appendChild(section);
+  }
+
   if (otherFolders.length > 0) {
     const section = document.createElement("section");
     const heading = document.createElement("h3");
@@ -168,16 +186,6 @@ function renderOtherRootContent(node) {
 
     section.appendChild(heading);
     section.appendChild(list);
-    wrapper.appendChild(section);
-  }
-
-  if (node.pages.length > 0) {
-    const section = document.createElement("section");
-    const heading = document.createElement("h3");
-    heading.textContent = "Top-level pages";
-    section.className = "mrgn-tp-lg";
-    section.appendChild(heading);
-    section.appendChild(renderPages(node.pages));
     wrapper.appendChild(section);
   }
 
