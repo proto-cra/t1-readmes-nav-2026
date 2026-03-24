@@ -44,11 +44,6 @@ noFooterMain: true
   margin-bottom: 0.1em;
 }
 
-#page-hierarchy .path-label {
-  display: block;
-  margin-bottom: 0.1em;
-}
-
 #page-hierarchy > .row > section > .sitemap-list,
 #page-hierarchy > section > .sitemap-list {
   padding-left: 0;
@@ -91,8 +86,8 @@ const pageHierarchyData = JSON.parse(
 );
 const { baseUrl, pages } = pageHierarchyData;
 const languageColumns = [
-  { key: "en", label: "/en" },
-  { key: "fr", label: "/fr" }
+  { key: "en" },
+  { key: "fr" }
 ];
 
 function createNode(name, path) {
@@ -129,7 +124,7 @@ for (const page of pages) {
   cursor.pages.push(page);
 }
 
-function renderTree(node) {
+function renderTree(node, pathPrefix = "") {
   const list = document.createElement("ul");
   list.className = "lst-spcd sitemap-list";
 
@@ -142,7 +137,8 @@ function renderTree(node) {
   for (const folderName of folderNames) {
     const folder = node.folders.get(folderName);
     const collapsedFolder = collapseFolder(folder);
-    list.appendChild(renderFolderItem(collapsedFolder));
+    list.appendChild(renderFolderItem(collapsedFolder, pathPrefix));
+    pathPrefix = "";
   }
 
   return list;
@@ -156,12 +152,8 @@ function renderLanguageColumns(node) {
     if (!node.folders.has(language.key)) continue;
 
     const column = document.createElement("section");
-    const label = document.createElement("code");
     column.className = "col-md-6";
-    label.className = "path-label";
-    label.textContent = language.label;
-    column.appendChild(label);
-    column.appendChild(renderTree(node.folders.get(language.key)));
+    column.appendChild(renderTree(node.folders.get(language.key), `/${language.key}`));
     row.appendChild(column);
   }
 
@@ -225,12 +217,12 @@ function renderPages(pagesToRender) {
   return list;
 }
 
-function renderFolderItem(collapsedFolder) {
+function renderFolderItem(collapsedFolder, pathPrefix = "") {
   const item = document.createElement("li");
   const code = document.createElement("code");
   const childTree = renderTree(collapsedFolder.node);
 
-  code.textContent = collapsedFolder.label;
+  code.textContent = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
   if (collapsedFolder.path === "source/data") {
     const details = document.createElement("details");
     const summary = document.createElement("summary");
