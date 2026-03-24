@@ -66,5 +66,9 @@
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html", 
     "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html"
+  },
+  {
+    "origin": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/alberta/5009-r.html", 
+    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5009-r.html"
   }
 ]
