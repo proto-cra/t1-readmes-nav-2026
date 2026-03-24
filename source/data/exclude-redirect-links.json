@@ -58,6 +58,10 @@
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-r.html", 
     "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-r.html"
+  },
+  {
+    "origin": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/5000-s2.html", 
+    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-s2.html"
   }, 
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html", 
