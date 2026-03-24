@@ -70,5 +70,9 @@
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/alberta/5009-r.html", 
     "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5009-r.html"
-  }
+  },
+  {
+    "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba.html", 
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba.html"
+  } 
 ]
