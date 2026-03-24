@@ -44,6 +44,11 @@ noFooterMain: true
   margin-bottom: 0.1em;
 }
 
+#page-hierarchy .path-label {
+  display: block;
+  margin-bottom: 0.1em;
+}
+
 #page-hierarchy > .row > section > .sitemap-list,
 #page-hierarchy > section > .sitemap-list {
   padding-left: 0;
@@ -86,8 +91,8 @@ const pageHierarchyData = JSON.parse(
 );
 const { baseUrl, pages } = pageHierarchyData;
 const languageColumns = [
-  { key: "en" },
-  { key: "fr" }
+  { key: "en", label: "/en" },
+  { key: "fr", label: "/fr" }
 ];
 
 function createNode(name, path) {
@@ -151,7 +156,11 @@ function renderLanguageColumns(node) {
     if (!node.folders.has(language.key)) continue;
 
     const column = document.createElement("section");
+    const label = document.createElement("code");
     column.className = "col-md-6";
+    label.className = "path-label";
+    label.textContent = language.label;
+    column.appendChild(label);
     column.appendChild(renderTree(node.folders.get(language.key)));
     row.appendChild(column);
   }
