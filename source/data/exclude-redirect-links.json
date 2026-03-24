@@ -45,30 +45,30 @@
   },
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html"
   }, 
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba/5007-pc.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba/5007-pc.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/manitoba/5007-pc.html"
   },
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018.html"
   },
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-r.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-r.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-r.html"
   },
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-s2.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-s2.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5000-s2.html"
   }, 
   {
     "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html"
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2018/manitoba.html"
   },
   {
-    "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-r.html", 
-    "destination": "https://cra-proto.github.io/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5009-r.html"
+    "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/alberta/5009-r.html", 
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/forms/5009-r.html"
   }
 ]
