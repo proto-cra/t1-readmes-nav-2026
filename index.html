@@ -44,6 +44,11 @@ noFooterMain: true
   margin-bottom: 0.1em;
 }
 
+#page-hierarchy .path-label {
+  display: block;
+  margin-bottom: 0.1em;
+}
+
 #page-hierarchy > .row > section > .sitemap-list,
 #page-hierarchy > section > .sitemap-list {
   padding-left: 0;
@@ -86,8 +91,8 @@ const pageHierarchyData = JSON.parse(
 );
 const { baseUrl, pages } = pageHierarchyData;
 const languageColumns = [
-  { key: "en" },
-  { key: "fr" }
+  { key: "en", label: "/en" },
+  { key: "fr", label: "/fr" }
 ];
 
 function createNode(name, path) {
@@ -151,7 +156,11 @@ function renderLanguageColumns(node) {
     if (!node.folders.has(language.key)) continue;
 
     const column = document.createElement("section");
+    const label = document.createElement("code");
     column.className = "col-md-6";
+    label.className = "path-label";
+    label.textContent = language.label;
+    column.appendChild(label);
     column.appendChild(renderTree(node.folders.get(language.key)));
     row.appendChild(column);
   }
@@ -159,38 +168,17 @@ function renderLanguageColumns(node) {
   return row;
 }
 
-function renderOtherRootContent(node) {
+function renderSelectedRootContent(node) {
   const wrapper = document.createDocumentFragment();
-  const otherFolders = [...node.folders.keys()].filter(
-    (folderName) => !languageColumns.some((language) => language.key === folderName)
-  );
+  const sourceFolder = node.folders.get("source");
 
-  if (node.pages.length > 0) {
+  if (sourceFolder?.folders.has("data")) {
     const section = document.createElement("section");
-    const heading = document.createElement("h3");
-    heading.textContent = "Top-level pages";
-    section.className = "mrgn-tp-lg";
-    section.appendChild(heading);
-    section.appendChild(renderPages(node.pages));
-    wrapper.appendChild(section);
-  }
-
-  if (otherFolders.length > 0) {
-    const section = document.createElement("section");
-    const heading = document.createElement("h3");
     const list = document.createElement("ul");
 
     section.className = "mrgn-tp-lg";
-    heading.textContent = "Other content";
     list.className = "lst-spcd sitemap-list";
-
-    for (const folderName of otherFolders.sort((a, b) => a.localeCompare(b))) {
-      const folder = node.folders.get(folderName);
-      const collapsedFolder = collapseFolder(folder);
-      list.appendChild(renderFolderItem(collapsedFolder));
-    }
-
-    section.appendChild(heading);
+    list.appendChild(renderFolderItem(collapseFolder(sourceFolder)));
     section.appendChild(list);
     wrapper.appendChild(section);
   }
@@ -257,5 +245,5 @@ function collapseFolder(folder) {
 
 const pageHierarchy = document.getElementById("page-hierarchy");
 pageHierarchy.appendChild(renderLanguageColumns(root));
-pageHierarchy.appendChild(renderOtherRootContent(root));
+pageHierarchy.appendChild(renderSelectedRootContent(root));
 </script>
