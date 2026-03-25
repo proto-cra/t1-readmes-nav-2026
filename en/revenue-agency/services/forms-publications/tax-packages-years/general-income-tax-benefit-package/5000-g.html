@@ -55,9 +55,7 @@ notedlinks:
 <li><a href="#digiservices">Digital services for individuals</a></li>
 <li><a href="#formoreinfo">For more information</a></li>
 <li><a href="#retiretable">Retirement income summary table</a></li>
-<li><a href="#h-6">Download a copy of&nbsp;<em>Federal Income Tax and Benefit Information</em></a></li>
-<li><a href="#Alternate">Ask for an alternate format</a></li>
-<li><a href="#h-7">Prior years</a></li>
+<li><a href="#prvs-yrs">Get other formats and prior year versions of Federal Income Tax and Benefit information</a></li>
 </ul>
         <h2 id="h-1">New for 2025</h2>
 <p>For a list of proposed, announced and enacted personal income tax changes for 2025, see&nbsp;<a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/whats-new.html">What's new for 2025</a>.</p>
@@ -968,26 +966,134 @@ notedlinks:
     </aside>
         </div>
     </div>
-        <h2 id="h-6">Download a copy of&nbsp;Federal Income Tax and Benefit Information</h2>
-<p>The&nbsp;<a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-25e.pdf"><em>2025 Federal Income Tax and Benefit Information</em></a>&nbsp;PDF is available for download.</p>
-<div class="alert alert-info">
-	<p>This PDF is <strong>not</strong> available to order.</p>
-</div>
-        <h2><a id="Alternate"></a>Ask for an alternate format</h2>
-<p>The following alternate formats are available for those with visual impairments:</p>
-<ul>
-<li><a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-25e.txt">E-text</a></li>
-<li><a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-lp-25e.pdf">Large print</a></li>
-</ul>
-<p>While all CRA web content is accessible, forms and publications are available in <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/help-forms-publications/about-multiple-formats.html">alternate formats</a> (digital audio, electronic text, Braille, and large print) to allow persons with disabilities to access the information they need.</p>
-        <h2 id="h-7">Prior years</h2>
-<p><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years.html#h-2">Previous-year information</a>&nbsp;is also available.</p>
-    <h2 class="wb-inv">Contributors</h2>
+<!-- Previous year versions section -->
+
+  <h2 id="prvs-yrs">Get other formats and prior year versions of Federal Income Tax and Benefit information</h2>
+  <div class="alert alert-warning">
+    <p>The PDF is not available to order for 2024 and later.</p>
+  </div>
+  <p>To ensure you access the <strong>correct</strong> form, enter the <strong>year </strong>in the table filter.</p>
+  <section data-wb-jsonmanager='{
+   "url": "{{ site.baseurl }}/source/data/5007-pc-table-data.json#/data",
+      "name": "forms"}'></section>
+  <section class="table-responsive mrgn-tp-lg">
+    <table class="wb-tables table table-striped table-condensed table-hover filterEmphasis provisional" 
+    id="year-filter" data-wb-json='{
+    "url": "#[forms]",
+    "source": "#tbl2",
+    "tobeclone": "tr",
+    "mapping": [
+        {
+            "selector": "th:nth-child(1)",
+            "value": "/year",
+            "placeholder": "[[year]]"
+        },
+        {
+            "selector": "td:nth-child(2)>a",
+            "value": "/html_acc_en/0"
+        },
+        {
+            "selector": "td:nth-child(2)>a",
+            "value": "/html_acc_en/1",
+            "attr": "href"
+        },
+        {
+            "selector": "td:nth-child(3)>a",
+            "value": "/stnd_pdf_en/0"
+        },
+        {
+            "selector": "td:nth-child(3)>a",
+            "value": "/stnd_pdf_en/1",
+            "attr": "href"
+        },
+        {
+            "selector": "td:nth-child(4)>a",
+            "value": "/lrge_pdf_en/0"
+        },
+        {
+            "selector": "td:nth-child(4)>a",
+            "value": "/lrge_pdf_en/1",
+            "attr": "href"
+        },
+        {
+            "selector": "td:nth-child(5)>a",
+            "value": "/dwld_etx_en/0"
+        },
+        {
+            "selector": "td:nth-child(5)>a",
+            "value": "/dwld_etx_en/1",
+            "attr": "href"
+        }
+    ]
+}' data-wb-tables=' {
+    "ordering": true,
+    "order": [[0, "desc"]],
+    "paging": false,
+    "retrieve": true
+}'>
+      <caption>
+      Formats available for the last 10 years (download e-text files before use)
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">HTML (Accessible)</th>
+          <th scope="col">Standard print PDF</th>
+          <th scope="col">Large print PDF</th>
+          <th scope="col">Electronic text</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
+  <template id="tbl2">
+    <table>
+      <tr>
+        <th scope="row">[[year]]</th>
+        <td><a class="small"></a></td>
+        <td><a class="small"></a></td>
+        <td><a class="small"></a></td>
+        <td><a class="small"></a></td>
+      </tr>
+    </table>
+  </template>
+  <button type="button" class="btn btn-default mrgn-tp-md" data-wb-doaction='{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "" }'>Clear filter</button>
+  <!-- URL mapping, a central management to avoid racing condition -->
+  <section data-wb-urlmapping='{ "year": [{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "{qval}", "match": "^[1-2][0-9][0-9][0-9]$", "default": " " }, { "action": "patch", "source": "#define-the-year", "base": "/years", "match": "^[0-9][0-9][0-9][0-9]$", "default": "0000", "patches": [{ "op": "copy", "from": "/years/{qval}", "path": "/select/year" }] } ], "region": [{ "action": "patch", "source": "#define-the-region", "base": "/regions", "match": "^[a-z][a-z]$", "default": "ni", "patches": [{ "op": "copy", "from": "/regions/{qval}", "path": "/select/region" }] }], "multiplequery": true } '></section>
+  <!-- Data source -->
+  <section id="sourceData" data-wb-jsonmanager='{ "url": "{{ site.baseurl }}/source/data/yr-prov.json", "patches": { "op": "add", "path": "/select", "value": {} }, "name": "sourceData", "debug": false } '></section>
+  <!-- Manager to receive the URL mapping update from the "year" parameter -->
+  <section id="define-the-year" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "wait": true, "name": "year-set", "debug": false } '></section>
+  <section id="define-the-region" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "name": "region-set", "debug": false } '></section>
+  <!-- Final JSON manager that assemble the paralel operation, This ensure that all operations are completed before to proceed, so this avoid a race condition -->
+  <section data-wb-jsonmanager='{ "url": [{ "url": "#[year-set]/select" }, { "url": "#[region-set]/select" }], "name": "find-other-form", "patches": { "op": "add", "path": "/emptystr", "value": "", "rfds:label": "This patch is used as an helper to render the paragraph visibility" }, "debug": false } '></section>
+  <!-- Render the personalized paragraph content, also it will only being display if valid info was provided -->
+  <section data-wb-json='{ "url": "#[find-other-form]", "streamline": true, "template": "template", "mapping": [{ "selector": "[data-year]", "value": "/year" }, { "selector": "[data-region]", "value": "/region/0" }, { "selector": "[data-anchor]", "value": "/year", "placeholder": "[[years]]" }, { "selector": "[data-anchor]", "value": "/region/0", "placeholder": "[[regions]]" }, { "selector": "[data-anchor]", "value": "/year", "attr": "href", "placeholder": "--years--" }, { "selector": "[data-anchor]", "value": "/region/2", "attr": "href", "placeholder": "--regions--" }, { "rdfs:label": "Unhide if we do have a valid year value", "test": "fn:isLiteral", "assess": "/year", "mapping": { "selector": "[data-paragraph]", "attr": "class", "placeholder": "- hidden -", "value": "/emptystr" } }, { "rdfs:label": "Unhide if we do have a valid region value", "test": "fn:getValue", "assess": "/region/0", "operand": "neq", "expect": "", "mapping": { "selector": "[data-paragraph]", "attr": "class", "placeholder": "* hidden *", "value": "/emptystr" } } ] } '>
+    <template>
+      <p data-paragraph class="mrgn-tp-lg - hidden -* hidden *">To find other <strong><span data-year>year</span></strong> forms or guides you may need <strong><span data-region>region</span></strong>, return to the <a data-anchor href=https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package---years----regions--.html>[[years]] Income tax package [[regions]]</a>.</p>
+    </template>
+  </section>
+</li>
+
+<!--Order Alt Format-->
+  <!--<section data-ajax-replace="https://canada-preview.adobecqms.net/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">-->
+  <section>
+    <h3>Ask for an alternate format</h3>
+    <p>You can order a digital audio, e-text, braille or large print version of this form to be mailed to you: </p>
+    <ul>
+      <li><a href="/content/canadasite/en/revenue-agency/services/forms-publications/help-forms-publications/about-multiple-formats.html">Order
+        alternate formats for persons with disabilities</a></li>
+    </ul>
+  </section>
+
+<!-- Archive section -->
+<section data-ajax-replace="{{ site.baseurl }}/source/data/archived-lac.txt #lac-en"></section>
+
+<h2 class="wb-inv">Contributors</h2>
 <section class="gc-contributors">
 <h3>From:</h3>
 <ul>
 <li><a href="https://www.canada.ca/en/revenue-agency.html">Canada Revenue Agency</a></li>
 </ul>
 </section>
-
-<script>_satellite.pageBottom();</script>
