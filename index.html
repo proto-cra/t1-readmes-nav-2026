@@ -51,7 +51,9 @@ noFooterMain: true
 </style>
 
 {% assign sitePages = site.pages | sort: "url" %}
+{% comment %}Include every generated Jekyll page, except the small set excluded below.{% endcomment %}
 {% assign sourceDataFiles = site.static_files | where_exp: "item", "item.path contains '/source/data/'" | sort: "path" %}
+{% comment %}Only static files under /source/data/ are included in this sitemap.{% endcomment %}
 <script id="page-hierarchy-data" type="application/json">
 {
   "baseUrl": {{ site.baseurl | jsonify }},
@@ -81,6 +83,8 @@ noFooterMain: true
 </script>
 
 <script>
+// Parse the static Jekyll output once, then build the hierarchy client-side.
+// Folder inclusion is derived from this pages array; there is no separate folder allowlist.
 const pageHierarchyData = JSON.parse(
   document.getElementById("page-hierarchy-data").textContent
 );
@@ -109,11 +113,14 @@ function getFolder(node, name) {
 
 const root = createNode("", "");
 
+// Group each page under its parent folder path so the renderer can walk a tree.
+// A folder appears only when at least one included page/file lives under that path.
 for (const page of pages) {
   const trimmedUrl = page.url.replace(/^\/+|\/+$/g, "");
   if (!trimmedUrl) continue;
 
   const parts = trimmedUrl.split("/");
+  // Drop the final segment (the file name) and treat the remaining URL segments as folders.
   parts.pop();
 
   let cursor = root;
@@ -148,6 +155,7 @@ function renderLanguageColumns(node) {
   const row = document.createElement("div");
   row.className = "row";
 
+  // Keep English and French content in separate columns at the top level.
   for (const language of languageColumns) {
     if (!node.folders.has(language.key)) continue;
 
@@ -224,6 +232,7 @@ function renderFolderItem(collapsedFolder, pathPrefix = "") {
 
   code.textContent = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
   if (collapsedFolder.path === "source/data") {
+    // Data files are noisy, so keep that branch collapsed until opened.
     const details = document.createElement("details");
     const summary = document.createElement("summary");
 
@@ -243,6 +252,7 @@ function collapseFolder(folder) {
   const names = [folder.name];
   let current = folder;
 
+  // Merge empty single-child directory chains into one label like "a/b/c".
   while (current.pages.length === 0 && current.folders.size === 1) {
     const [nextName, nextFolder] = [...current.folders.entries()][0];
     names.push(nextName);
