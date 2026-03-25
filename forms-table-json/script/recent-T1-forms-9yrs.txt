@@ -1,6 +1,6 @@
 5000-d1
 5000-d2
-# 5000-r (Skip - manually update HTML table every year)
+# 5000-r (Skip – manually update HTML table every year)
 5000-s1
 5000-s2
 5000-s3
@@ -76,7 +76,7 @@
 5008-tc
 5009-c
 5009-d
-# 5009-r (Renewed for 2025 - No prior years within 10 years)
+# 5009-r (Renewed for 2025 – No prior years within 10 years)
 5009-s2
 5009-s6
 5009-s11
@@ -119,4 +119,4 @@
 5014-s6
 5014-s11
 5014-tc
-# 5015-r (Skip - manually update HTML table every year)
+# 5015-r (Skip – manually update HTML table every year)
