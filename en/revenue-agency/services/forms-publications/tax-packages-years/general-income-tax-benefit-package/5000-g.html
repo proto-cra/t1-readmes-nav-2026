@@ -1060,7 +1060,57 @@ notedlinks:
     </template>
   <button type="button" class="btn btn-default mrgn-tp-md" data-wb-doaction='{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "" }'>Clear filter</button>
   <!-- URL mapping, a central management to avoid racing condition -->
-  <section data-wb-urlmapping='{ "year": [{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "{qval}", "match": "^[1-2][0-9][0-9][0-9]$", "default": " " }, { "action": "patch", "source": "#define-the-year", "base": "/years", "match": "^[0-9][0-9][0-9][0-9]$", "default": "0000", "patches": [{ "op": "copy", "from": "/years/{qval}", "path": "/select/year" }] } ], "region": [{ "action": "patch", "source": "#define-the-region", "base": "/regions", "match": "^[a-z][a-z]$", "default": "ni", "patches": [{ "op": "copy", "from": "/regions/{qval}", "path": "/select/region" }] }], "multiplequery": true } '></section>
+  <section data-wb-urlmapping='{
+    "year": [
+      {
+        "action": "tblfilter",
+        "source": "#year-filter",
+        "column": 0,
+        "value": "{qval}",
+        "match": "^[1-2][0-9][0-9][0-9]$",
+        "default": " "
+      },
+      {
+        "action": "patch",
+        "source": "#define-the-year",
+        "base": "/years",
+        "match": "^[0-9][0-9][0-9][0-9]$",
+        "default": "0000",
+        "patches": [
+          {
+            "op": "copy",
+            "from": "/years/{qval}",
+            "path": "/select/year"
+          }
+        ]
+      }
+    ],
+    "region": [
+      {
+        "action": "tblfilter",
+        "source": "#year-filter",
+        "column": 1,
+        "value": "{qval}",
+        "match": "^[a-z][a-z]$",
+        "default": ""
+      },
+      {
+        "action": "patch",
+        "source": "#define-the-region",
+        "base": "/regions",
+        "match": "^[a-z][a-z]$",
+        "default": "ni",
+        "patches": [
+          {
+            "op": "copy",
+            "from": "/regions/{qval}",
+            "path": "/select/region"
+          }
+        ]
+      }
+    ],
+    "multiplequery": true
+  }'></section>
   <!-- Data source -->
   <section id="sourceData" data-wb-jsonmanager='{ "url": "{{ site.baseurl }}/source/data/yr-prov.json", "patches": { "op": "add", "path": "/select", "value": {} }, "name": "sourceData", "debug": false } '></section>
   <!-- Manager to receive the URL mapping update from the "year" parameter -->
