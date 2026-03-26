@@ -8,6 +8,11 @@
     "destination": "/t1-readmes-nav-2026/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package.html"
   },
   {
+    "origin": "  https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/alberta.html",
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/alberta.html"
+  },
+
+  {
     "origin": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/alberta.html",
     "destination": "/t1-readmes-nav-2026/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/alberta.html"
   },
@@ -34,6 +39,10 @@
   {
     "origin": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2018/manitoba.html",
     "destination": "/t1-readmes-nav-2026/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2018/manitoba.html"
+  },
+  {
+    "origin": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-g.html", 
+    "destination": "/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-g.html"
   },
   {
     "origin": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/5000-s2.html",
