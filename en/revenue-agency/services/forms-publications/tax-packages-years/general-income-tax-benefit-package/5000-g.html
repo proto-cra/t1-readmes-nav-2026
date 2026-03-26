@@ -1058,7 +1058,20 @@ notedlinks:
         </tr>
       </table>
     </template>
-  <button type="button" class="btn btn-default mrgn-tp-md" data-wb-doaction='{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "" }'>Clear filter</button>
+  <button type="button" class="btn btn-default mrgn-tp-md" data-wb-doaction='[
+    {
+      "action": "tblfilter",
+      "source": "#year-filter",
+      "column": 0,
+      "value": ""
+    },
+    {
+      "action": "tblfilter",
+      "source": "#year-filter",
+      "column": 1,
+      "value": ""
+    }
+  ]'>Clear filter</button>
   <!-- URL mapping, a central management to avoid racing condition -->
   <section data-wb-urlmapping='{
     "year": [
@@ -1086,6 +1099,16 @@ notedlinks:
       }
     ],
     "region": [
+      {
+        "action": "tblfilter",
+        "source": "#year-filter",
+        "column": 1,
+        "value": "(^|,\\\\s*|>){qval}(?=(?:,\\\\s*|<span|$))",
+        "regex": true,
+        "smart": false,
+        "match": "^[a-z][a-z]$",
+        "default": ""
+      },
       {
         "action": "patch",
         "source": "#define-the-region",
