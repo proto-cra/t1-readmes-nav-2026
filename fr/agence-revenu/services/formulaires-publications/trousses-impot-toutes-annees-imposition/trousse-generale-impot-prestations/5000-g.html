@@ -55,9 +55,7 @@ notedlinks:
     <li><a href="#servnum">Services numériques pour les particuliers</a></li>
     <li><a href="#savoirplus">Pour en savoir plus</a></li>
     <li><a href="#tableretraite">Tableau sommaire du revenu de retraite</a></li>
-    <li><a href="#h-6">Télécharger une copie des Renseignements sur l’impôt et les prestations fédéraux</a></li>
-    <li><a href="#Substitut">Demandez un format substitut</a></li>
-    <li><a href="#h-7">Années précédentes</a></li>
+    <li><a href="#prvs-yrs"><mark>Obtenez d'autres formats ou une version des années précédentes</mark></a></li>
 </ul>
 
 <h2 id="h-1">Quoi de neuf pour<span class="nowrap">&nbsp;2025</span></h2>
@@ -1512,26 +1510,172 @@ notedlinks:
     </div>
 </div>
 
-<h2 id="h-6">Télécharger une copie des Renseignements sur l’impôt et les prestations fédéraux</h2>
-<p>
-    Le document PDF&nbsp;<a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-25f.pdf"><em>Renseignements sur l’impôt fédéral et les prestations pour 2025</em></a
-    >&nbsp;est disponible au téléchargement.
-</p>
-
-<div class="alert alert-info">
-    <p>Ce PDF <strong>ne peut pas</strong> être commandé.</p>
+<!-- Previous year versions section -->
+<h3 id="prvs-yrs"><mark>Obtenez d'autres formats ou une version des années précédentes</mark></h3>
+<div class="alert alert-warning">
+  <p><mark>Le PDF ne peut pas être commandé pour l'année 2024 et après.</mark></p>
 </div>
+<p>Pour vous assurer d’accéder au <strong>bon</strong> <mark>guide</mark>, entrez l’<strong>année</strong> et la <strong>province ou le territoire</strong> (nom complet) dans le filtre du tableau.</p>
 
-<h2><a id="Substitut"></a>Demandez un format substitut</h2>
-<p>Les formats substituts suivants sont disponibles pour les personnes ayant une déficience <span class="nowrap">visuelle&nbsp;:</span></p>
-<ul>
-    <li><a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-25f.txt">Texte électronique</a></li>
-    <li><a href="https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-lp-25f.pdf">Gros caractères</a></li>
-</ul>
-<p>Bien que tout le contenu Web de l’ARC soit accessible, les formulaires et publications sont offerts en formats substituts (fichiers audio numériques, texte électronique, braille et gros caractères) afin de permettre aux personnes handicapées d’accéder à l’information dont elles ont besoin.</p>
+  <section data-wb-jsonmanager='{
+    "url": "{{ site.baseurl }}/source/data/5000-g-table-data-with-region.json#/data",
+    "name": "forms"}'></section>
+  <section class="table-responsive mrgn-tp-lg">
+    <table class="wb-tables table table-striped table-condensed table-hover filterEmphasis provisional" 
+    id="year-filter" data-wb-json='{
+    "url": "#[forms]",
+    "source": "#tbl2",
+    "tobeclone": "tr",
+    "mapping": [
+      {
+        "selector": "th:nth-child(1)",
+        "value": "/year",
+        "placeholder": "[[year]]"
+      },
+      {
+        "selector": "td:nth-child(2)",
+        "value": "/regions_fr",
+        "isHTML": true,
+        "placeholder": "[[applicable_regions]]"
+      },
+      {
+        "selector": "td:nth-child(3)>span>a",
+        "isHTML": true,
+        "value": "/html_acc_fr/0"
+      },
+      {
+        "selector": "td:nth-child(3)>span>a",
+        "value": "/html_acc_fr/1",
+        "attr": "href"
+      }, 
+      {
+        "selector": "td:nth-child(4)>a",
+        "value": "/stnd_pdf_fr/0"
+      }, {
+        "selector": "td:nth-child(4)>a",
+        "value": "/stnd_pdf_fr/1",
+        "attr": "href"
+      },
+      {
+        "selector": "td:nth-child(5)>a",
+        "value": "/lrge_pdf_fr/0"
+      },
+      {
+        "selector": "td:nth-child(5)>a",
+        "value": "/lrge_pdf_fr/1",
+        "attr": "href"
+      },
+      {
+        "selector": "td:nth-child(6)>a",
+        "value": "/dwld_etx_fr/0"
+      },
+      {
+        "selector": "td:nth-child(6)>a",
+        "value": "/dwld_etx_fr/1",
+        "attr": "href"
+      }
+    ]
+   }
+    ' data-wb-tables=' { "ordering": true, "order": [ [0, "desc"] ], "paging": false, "retrieve": true }'>
+      <caption>
+      Formats disponibles pour les 10 dernières années (veuillez télécharger les fichiers .txt avant l'utilisation)
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+            <th scope="col">Provinces ou territoires</th>
+          <th scope="col"><mark>HTML (Accessible)</mark></th>
+          <th scope="col">PDF standard</th>
+          <th scope="col">PDF en gros caractères</th>
+          <th scope="col">Texte électronique</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
+  <template id="tbl2">
+    <table>
+      <tr>
+        <th scope="row">[[year]]</th>
+        <td>[[applicable_regions]]</td>
+          <td><span class="nowrap"><a class="small"></a></span></td>
+        <td><a class="small"></a></td>
+        <td><a class="small"></a></td>
+        <td><a class="small"></a></td>
+      </tr>
+    </table>
+  </template>
+  <button type="button" class="btn btn-default mrgn-tp-md" data-wb-doaction='{ "action": "tblfilter", "source": "#year-filter", "column": 0, "value": "" }'>Réinitialiser le filtre</button>
+  <!-- URL mapping, a central management to avoid racing condition -->
+  <section data-wb-urlmapping='{
+    "year": [
+      {
+        "action": "tblfilter",
+        "source": "#year-filter",
+        "column": 0,
+        "value": "{qval}",
+        "match": "^[1-2][0-9][0-9][0-9]$",
+        "default": " "
+      },
+      {
+        "action": "patch",
+        "source": "#define-the-year",
+        "base": "/years",
+        "match": "^[0-9][0-9][0-9][0-9]$",
+        "default": "0000",
+        "patches": [
+          {
+            "op": "copy",
+            "from": "/years/{qval}",
+            "path": "/select/year"
+          }
+        ]
+      }
+    ],
+    "region": [
+      {
+        "action": "patch",
+        "source": "#define-the-region",
+        "base": "/regions",
+        "match": "^[a-z][a-z]$",
+        "default": "ni",
+        "patches": [
+          {
+            "op": "copy",
+            "from": "/regions/{qval}",
+            "path": "/select/region"
+          }
+        ]
+      }
+    ],
+    "multiplequery": true
+  }'></section>
+  <!-- Data source -->
+  <section id="sourceData" data-wb-jsonmanager='{ "url": "{{ site.baseurl }}/source/data/yr-prov.json", "patches": { "op": "add", "path": "/select", "value": {} }, "name": "sourceData", "debug": false } '></section>
+  <!-- Manager to receive the URL mapping update from the "year" parameter -->
+  <section id="define-the-year" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "wait": true, "name": "year-set", "debug": false } '></section>
+  <section id="define-the-region" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "name": "region-set", "debug": false } '></section>
+  <!-- Final JSON manager that assemble the paralel operation, This ensure that all operations are completed before to proceed, so this avoid a race condition -->
+  <section data-wb-jsonmanager='{ "url": [{ "url": "#[year-set]/select" }, { "url": "#[region-set]/select" }], "name": "find-other-form", "patches": { "op": "add", "path": "/emptystr", "value": "", "rfds:label": "This patch is used as an helper to render the paragraph visibility" }, "debug": false } '></section>
+  <!-- Render the personalized paragraph content, also it will only being display if valid info was provided -->
+  <section data-wb-json='{ "url": "#[find-other-form]", "streamline": true, "template": "template", "mapping": [{ "selector": "[data-year]", "value": "/year" }, { "selector": "[data-region]", "value": "/region/0" }, { "selector": "[data-anchor]", "value": "/year", "placeholder": "[[years]]" }, { "selector": "[data-anchor]", "value": "/region/0", "placeholder": "[[regions]]" }, { "selector": "[data-anchor]", "value": "/year", "attr": "href", "placeholder": "--years--" }, { "selector": "[data-anchor]", "value": "/region/2", "attr": "href", "placeholder": "--regions--" }, { "rdfs:label": "Unhide if we do have a valid year value", "test": "fn:isLiteral", "assess": "/year", "mapping": { "selector": "[data-paragraph]", "attr": "class", "placeholder": "- hidden -", "value": "/emptystr" } }, { "rdfs:label": "Unhide if we do have a valid region value", "test": "fn:getValue", "assess": "/region/0", "operand": "neq", "expect": "", "mapping": { "selector": "[data-paragraph]", "attr": "class", "placeholder": "* hidden *", "value": "/emptystr" } } ] } '>
+    <template>
+      <p data-paragraph class="mrgn-tp-lg - hidden -* hidden *">Pour trouver d’autres formulaires ou guides de l'année <strong><span data-year>année</span></strong> dont vous pourriez avoir besoin <strong><span data-region>région</span></strong>, retournez à la <a data-anchor href=https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations---years----regions--.html>trousse d’impôt sur le revenu de [[years]] [[regions]]</a>.</p>
+    </template>
+  </section>
 
-<h2 id="h-7">Années précédentes</h2>
-<p>Les <a href="/t1-readmes-nav-2026/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition.html"><mark>renseignements des années passées</mark></a> sont aussi disponibles</p>
+<!--Order Alt Format-->
+    <!--<section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-fra">-->
+      <h3>Demandez le formulaire en format substitut</h3>
+      <p>Vous pouvez commander le formulaire en d'autres formats, comme en fichier audio numérique, en texte électronique, en braille et en gros caractères.</p>
+      <ul>
+        <li><a href="/fr/agence-revenu/services/formulaires-publications/aide-formulaires-publications/a-propos-formats-alternatifs-substituts.html" class="nowrap">Commander des formats substituts pour les personnes handicapées</a></li>
+      </ul>
+    <!--</section>-->
+
+<!-- Archive section -->
+<section data-ajax-replace="{{ site.baseurl }}/source/data/archived-lac.txt #lac-fr"></section>
 
 <h2 class="wb-inv">Collaborateurs</h2>
 <section class="gc-contributors">
