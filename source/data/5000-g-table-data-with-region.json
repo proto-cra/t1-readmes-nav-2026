@@ -66,8 +66,8 @@
     },
     {
       "year": "2022",
-      "regions_en": "ON<span class=\"wb-inv\">Ontario</span>",
-      "regions_fr": "ON<span class=\"wb-inv\">Ontario</span>",
+      "regions_en": "ON<span class=\"wb-inv\">, Ontario</span>",
+      "regions_fr": "ON<span class=\"wb-inv\">, Ontario</span>",
       "html_acc_en": ["Federal income tax and benefit <br> information for 2022 (5000-G-ON)", "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2022/5000-g/income-tax-benefit-guide.html"],
       "html_acc_fr": ["Renseignements sur l'impôt fédéral <br> et les prestations pour 2022 (5000-G-ON)", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2022/5000-g.html"],
       "stnd_pdf_en": ["2022 - Standard PDF (5000-G-ON)", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-on-22e.pdf"],
@@ -79,8 +79,8 @@
     },
     {
       "year": "2022",
-      "regions_en": "NU<span class=\"wb-inv\">Nunavut</span>",
-      "regions_fr": "NU<span class=\"wb-inv\">Nunavut</span>",
+      "regions_en": "NU<span class=\"wb-inv\">, Nunavut</span>",
+      "regions_fr": "NU<span class=\"wb-inv\">, Nunavut</span>",
       "html_acc_en": ["Federal income tax and benefit <br> information for 2022 (5000-G-NU)", "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2022/5000-g/income-tax-benefit-guide.html"],
       "html_acc_fr": ["Renseignements sur l'impôt fédéral <br> et les prestations pour 2022 (5000-G-NU)", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2022/5000-g.html"],
       "stnd_pdf_en": ["2022 - Standard PDF (5000-G-NU)", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-nu-22e.pdf"],
@@ -144,8 +144,8 @@
     },
     {
       "year": "2019",
-      "regions_en": "AB<span class=\"wb-inv\">Alberta</span>",
-      "regions_fr": "AB<span class=\"wb-inv\">Alberta</span>",
+      "regions_en": "AB<span class=\"wb-inv\">, Alberta</span>",
+      "regions_fr": "AB<span class=\"wb-inv\">, Alberta</span>",
       "html_acc_en": ["Federal income tax and benefit <br> information for 2019 (5000-G-C)", "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2019/5000-g/income-tax-benefit-guide.html"],
       "html_acc_fr": ["Renseignements sur l'impôt fédéral <br> et les prestations pour 2019 (5000-G-C)", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2019/5000-g/guide-impot-prestations.html"],
       "stnd_pdf_en": ["2019 - Standard PDF (5000-G-C)", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-c-19e.pdf"],
@@ -157,8 +157,8 @@
     },
     {
       "year": "2019",
-      "regions_en": "NB<span class=\"wb-inv\">New Brunswick</span>",
-      "regions_fr": "NB<span class=\"wb-inv\">Nouveau-Brunswick</span>",
+      "regions_en": "NB<span class=\"wb-inv\">, New Brunswick</span>",
+      "regions_fr": "NB<span class=\"wb-inv\">, Nouveau-Brunswick</span>",
       "html_acc_en": ["Federal income tax and benefit <br> information for 2019 (5000-G-N)", "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2019/5000-g/income-tax-benefit-guide.html"],
       "html_acc_fr": ["Renseignements sur l'impôt fédéral <br> et les prestations pour 2019 (5000-G-N)", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2019/5000-g/guide-impot-prestations.html"],
       "stnd_pdf_en": ["2019 - Standard PDF (5000-G-N)", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-n-19e.pdf"],
