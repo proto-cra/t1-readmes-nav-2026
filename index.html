@@ -168,14 +168,27 @@ function renderTree(node, pathPrefix = "") {
 function renderLanguageColumns(node) {
   const row = document.createElement("div");
   row.className = "row";
+  const languageTrees = languageColumns
+    .map((language) => ({
+      key: language.key,
+      node: node.folders.get(language.key)
+    }))
+    .filter((languageTree) => languageTree.node);
+  const sharedCollapseDepth = languageTrees.length > 0
+    ? Math.min(...languageTrees.map((languageTree) => getCollapsibleDepth(languageTree.node)))
+    : 1;
 
   // Keep English and French content in separate columns at the top level.
-  for (const language of languageColumns) {
-    if (!node.folders.has(language.key)) continue;
-
+  for (const languageTree of languageTrees) {
     const column = document.createElement("section");
+    const list = document.createElement("ul");
+    const collapsedFolder = collapseFolder(languageTree.node, sharedCollapseDepth);
+
     column.className = "col-md-6";
-    column.appendChild(renderTree(node.folders.get(language.key), `/${language.key}`));
+    list.className = "lst-spcd sitemap-list";
+    appendPageItems(list, languageTree.node.pages);
+    list.appendChild(renderFolderItem(collapsedFolder, `/${languageTree.key}`));
+    column.appendChild(list);
     row.appendChild(column);
   }
 
@@ -266,12 +279,16 @@ function renderFolderItem(collapsedFolder, pathPrefix = "") {
   return item;
 }
 
-function collapseFolder(folder) {
+function collapseFolder(folder, maxSegments = Number.POSITIVE_INFINITY) {
   const names = [folder.name];
   let current = folder;
 
   // Merge empty single-child directory chains into one label like "a/b/c".
-  while (current.pages.length === 0 && current.folders.size === 1) {
+  while (
+    names.length < maxSegments &&
+    current.pages.length === 0 &&
+    current.folders.size === 1
+  ) {
     const [nextName, nextFolder] = [...current.folders.entries()][0];
     names.push(nextName);
     current = nextFolder;
@@ -282,6 +299,19 @@ function collapseFolder(folder) {
     node: current,
     path: current.path
   };
+}
+
+function getCollapsibleDepth(folder) {
+  let depth = 1;
+  let current = folder;
+
+  while (current.pages.length === 0 && current.folders.size === 1) {
+    const [, nextFolder] = [...current.folders.entries()][0];
+    depth += 1;
+    current = nextFolder;
+  }
+
+  return depth;
 }
 
 const pageHierarchy = document.getElementById("page-hierarchy");
