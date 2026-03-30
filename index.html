@@ -28,6 +28,8 @@ noFooterMain: true
 <style>
 #page-hierarchy {
   line-height: 1.2;
+  --sitemap-page-indent: 0.9em;
+  --sitemap-bullet-gap: 0.9em;
 }
 
 .sitemap-list {
@@ -43,11 +45,13 @@ noFooterMain: true
 .sitemap-pages {
   margin-top: 0.15em;
   margin-bottom: 0.15em;
-  padding-left: 0.9em;
+  padding-left: 0;
 }
 
 .sitemap-page-item {
-  padding-left: 0.9em;
+  list-style: none;
+  margin-left: var(--sitemap-page-indent);
+  padding-left: var(--sitemap-bullet-gap);
   position: relative;
 }
 
@@ -152,10 +156,7 @@ function renderTree(node, pathPrefix = "") {
   const list = document.createElement("ul");
   list.className = "lst-spcd sitemap-list";
 
-  const pagesList = renderPages(node.pages);
-  while (pagesList.firstChild) {
-    list.appendChild(pagesList.firstChild);
-  }
+  appendPageItems(list, node.pages);
 
   const folderNames = [...node.folders.keys()].sort((a, b) => a.localeCompare(b));
   for (const folderName of folderNames) {
@@ -228,6 +229,11 @@ function renderPages(pagesToRender) {
   const list = document.createElement("ul");
   list.className = "lst-spcd sitemap-pages";
 
+  appendPageItems(list, pagesToRender);
+  return list;
+}
+
+function appendPageItems(list, pagesToRender) {
   const sortedPages = [...pagesToRender].sort((a, b) => a.label.localeCompare(b.label));
   for (const page of sortedPages) {
     const item = document.createElement("li");
@@ -239,8 +245,6 @@ function renderPages(pagesToRender) {
     item.appendChild(link);
     list.appendChild(item);
   }
-
-  return list;
 }
 
 function renderFolderItem(collapsedFolder, pathPrefix = "") {
