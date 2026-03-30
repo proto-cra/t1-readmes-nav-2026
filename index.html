@@ -41,16 +41,21 @@ noFooterMain: true
 }
 
 .sitemap-pages {
-  list-style: disc;
   margin-top: 0.15em;
   margin-bottom: 0.15em;
   padding-left: 1.2em;
 }
 
-.sitemap-pages > li {
-  list-style: disc;
+.sitemap-page-item {
   margin-bottom: 0.2em;
-  padding-left: 0;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.sitemap-page-item::before {
+  content: "\2022";
+  left: 0;
+  position: absolute;
 }
 
 #page-hierarchy details > summary {
@@ -229,6 +234,7 @@ function renderPages(pagesToRender) {
     const item = document.createElement("li");
     const link = document.createElement("a");
 
+    item.className = "sitemap-page-item";
     link.href = `${baseUrl}${page.url}`;
     link.textContent = page.label || page.url;
     item.appendChild(link);
