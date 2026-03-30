@@ -1,6 +1,6 @@
 ---
 testBanner: false
-title: "t1-readmes-nav-2026<br> Github repository sitemap"
+title: "Github repository sitemap &ndash; t1-readmes-nav-2026"
 dateModified: 2026-03-23
 dateIssued: 2026-03-23
 nositesearch: true
@@ -42,6 +42,8 @@ noFooterMain: true
 
 .sitemap-pages {
   list-style: disc;
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
   padding-left: 1.2em;
 }
 
@@ -219,7 +221,7 @@ function renderOtherRootContent(node) {
 
 function renderPages(pagesToRender) {
   const list = document.createElement("ul");
-  list.className = "lst-spcd sitemap-list sitemap-pages";
+  list.className = "lst-spcd sitemap-pages";
 
   const sortedPages = [...pagesToRender].sort((a, b) => a.label.localeCompare(b.label));
   for (const page of sortedPages) {
