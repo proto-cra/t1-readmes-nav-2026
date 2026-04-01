@@ -23,7 +23,7 @@ Logic Map
 [CmdletBinding()]
 param(
   [string]$FormsListPath = ".\\recent-T1-forms-9yrs.txt",
-  [string]$TemplatePath = ".\\template-table-data.json",
+  [string]$TemplatePath = ".\\t1-form-template-table-data.json",
   [string]$OutputDir,
   [int]$TimeoutSec = 12,
   [int]$RequestDelayMs = 0,
