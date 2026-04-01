@@ -14,7 +14,7 @@ function Get-GuideJsonFiles {
     )
 
     return Get-ChildItem -Path $Directory -Filter '*-table-data.json' |
-        Where-Object { $_.Name -ne '5000-g-table-data-with-region.json' } |
+        Where-Object { $_.Name -ne '5000-g-table-data-with-regions.json' } |
         Sort-Object Name
 }
 
