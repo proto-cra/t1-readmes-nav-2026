@@ -62,7 +62,7 @@
       "lrge_pdf_en": ["2022 - Large print PDF <span class=\"nowrap\">(5000-G-C)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-c-lp-22e.pdf"],
       "lrge_pdf_fr": ["2022 - PDF en gros caractères <span class=\"nowrap\">(5000-G-C)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-c-lp-22f.pdf"],
       "dwld_etx_en": ["2022 - E-text file <span class=\"nowrap\">(5000-G-C)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-c-22e.txt"],
-      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-C)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/50₀₀-g-c-22f.txt"]
+      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-C)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-c-22f.txt"]
     },
     {
       "year": "2022",
@@ -75,7 +75,7 @@
       "lrge_pdf_en": ["2022 - Large print PDF <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-ON)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-on-lp-22e.pdf"],
       "lrge_pdf_fr": ["2022 - PDF en gros caractères <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-ON)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-on-lp-22f.pdf"],
       "dwld_etx_en": ["2022 - E-text file <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-ON)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-on-22e.txt"],
-      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-ON)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/50₀₀-g/5₀₀₀-g-on-₂₂f.txt"]
+      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-ON)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-on-22f.txt"]
     },
     {
       "year": "2022",
@@ -88,7 +88,7 @@
       "lrge_pdf_en": ["2022 - Large print PDF <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-NU)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-nu-lp-22e.pdf"],
       "lrge_pdf_fr": ["2022 - PDF en gros caractères <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-NU)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-nu-lp-22f.pdf"],
       "dwld_etx_en": ["2022 - E-text file <span class=\"nowrap\"><span class=\"nowrap\">(5000-G-NU)</span></span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-nu-22e.txt"],
-      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-NU)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/50₀₀-g/5₀₀₀-g-nu-₂₂f.txt"]
+      "dwld_etx_fr": ["2022 - Fichier .txt <span class=\"nowrap\">(5000-G-NU)</span>", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5000-g/5000-g-nu-22f.txt"]
     },
     {
       "year": "2021",
