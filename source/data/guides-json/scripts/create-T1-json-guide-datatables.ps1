@@ -180,7 +180,9 @@ function Write-TextFileWithEncoding {
 function Get-GuideMetadataMap {
   param([Parameter(Mandatory)] [string]$Path)
 
-  $json = Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+  $metadataFile = Read-TextFilePreserveEncoding -Path $Path
+  Assert-NoMojibakeText -Text $metadataFile.Text -Context 'guide metadata JSON'
+  $json = $metadataFile.Text | ConvertFrom-Json
   return ConvertTo-HashtableRecursive -InputObject $json
 }
 
@@ -605,6 +607,12 @@ function Test-Url200 {
     return $null
   }
 
+  function Is-Canada404LandingUrl {
+    param([AllowNull()][string]$FinalUrl)
+    if ([string]::IsNullOrWhiteSpace($FinalUrl)) { return $false }
+    return $FinalUrl -match '^https://www\.canada\.ca/errors/404\.html(?:[?#].*)?$'
+  }
+
   function Is-TransientHttpStatus {
     param([Nullable[int]]$StatusCode)
     if ($null -eq $StatusCode) { return $true }
@@ -631,8 +639,9 @@ function Test-Url200 {
         $response = Invoke-WebRequest -Uri $AttemptUrl -Method $Method -TimeoutSec $AttemptTimeoutSec -MaximumRedirection $AttemptMaxRedirects -ErrorAction Stop
         $statusCode = [int]$response.StatusCode
         $finalUrl = Get-FinalResponseUri -Response $response
+        $isCanada404Landing = Is-Canada404LandingUrl -FinalUrl $finalUrl
         return [pscustomobject]@{
-          Success    = ($statusCode -ge 200 -and $statusCode -le 299)
+          Success    = ($statusCode -ge 200 -and $statusCode -le 299 -and -not $isCanada404Landing)
           StatusCode = $statusCode
           FinalUrl   = $finalUrl
           Redirected = ($null -ne $finalUrl -and $finalUrl -ne $AttemptUrl)
@@ -750,6 +759,21 @@ function Set-PairInRowAndJson {
   $JsonTextRef.Value = $jsonText
 }
 
+function Set-FieldInRowAndJson {
+  param(
+    [Parameter(Mandatory)] [psobject]$Row,
+    [Parameter(Mandatory)] [string]$YearValue,
+    [Parameter(Mandatory)] [string]$Key,
+    [Parameter(Mandatory)] [object[]]$Value,
+    [Parameter(Mandatory)] [ref]$JsonTextRef
+  )
+
+  $Row.$Key = $Value
+  $jsonText = [string]$JsonTextRef.Value
+  $jsonText = Replace-ArrayInYearObject -JsonText $jsonText -Year $YearValue -KeyName $Key -NewArrayJson (Convert-ArrayToInlineJson -Value $Value)
+  $JsonTextRef.Value = $jsonText
+}
+
 function Set-PairToNotAvailable {
   param(
     [Parameter(Mandatory)] [psobject]$Row,
@@ -760,6 +784,19 @@ function Set-PairToNotAvailable {
   )
 
   Set-PairInRowAndJson -Row $Row -YearValue $YearValue -EnKey $EnKey -EnValue $EN_NA -FrKey $FrKey -FrValue $FR_NA -JsonTextRef $JsonTextRef
+}
+
+function Set-FieldToNotAvailable {
+  param(
+    [Parameter(Mandatory)] [psobject]$Row,
+    [Parameter(Mandatory)] [string]$YearValue,
+    [Parameter(Mandatory)] [string]$Key,
+    [Parameter(Mandatory)] [ValidateSet('en', 'fr')] [string]$Lang,
+    [Parameter(Mandatory)] [ref]$JsonTextRef
+  )
+
+  $value = if ($Lang -eq 'en') { $EN_NA } else { $FR_NA }
+  Set-FieldInRowAndJson -Row $Row -YearValue $YearValue -Key $Key -Value $value -JsonTextRef $JsonTextRef
 }
 
 function Normalize-NaArrayLiterals {
@@ -883,24 +920,28 @@ foreach ($pub in $pubsForGeneration) {
 
       $enIsNA = Is-NotAvailablePair -Value $enVal -Lang 'en'
       $frIsNA = Is-NotAvailablePair -Value $frVal -Lang 'fr'
-      if ($enIsNA -or $frIsNA) {
-        Set-PairToNotAvailable -Row $row -YearValue $yearValue -EnKey $enKey -FrKey $frKey -JsonTextRef ([ref]$outJsonFinal)
-        $changedPairs++
-        continue
-      }
 
       $enUrl = Get-LinkUrl -Value $enVal
       $frUrl = Get-LinkUrl -Value $frVal
-      if (-not $enUrl -and -not $frUrl) { continue }
-      if (-not $enUrl -or -not $frUrl) { continue }
+      $enInvalid = $false
+      $frInvalid = $false
 
-      $enValid = Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects
-      $frValid = Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects
+      if (-not $enIsNA -and $enUrl) {
+        $enInvalid = -not (Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects)
+      }
+      if (-not $frIsNA -and $frUrl) {
+        $frInvalid = -not (Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects)
+      }
 
-      if ($enValid -and $frValid) { continue }
-
-      Set-PairToNotAvailable -Row $row -YearValue $yearValue -EnKey $enKey -FrKey $frKey -JsonTextRef ([ref]$outJsonFinal)
-      $changedPairs++
+      if ($enInvalid) {
+        Set-FieldToNotAvailable -Row $row -YearValue $yearValue -Key $enKey -Lang 'en' -JsonTextRef ([ref]$outJsonFinal)
+      }
+      if ($frInvalid) {
+        Set-FieldToNotAvailable -Row $row -YearValue $yearValue -Key $frKey -Lang 'fr' -JsonTextRef ([ref]$outJsonFinal)
+      }
+      if ($enInvalid -or $frInvalid) {
+        $changedPairs++
+      }
     }
   }
 

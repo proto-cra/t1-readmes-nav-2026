@@ -95,9 +95,9 @@
       "stnd_pdf_en": ["2017 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-17e.pdf"],
       "stnd_pdf_fr": ["2017 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-17f.pdf"],
       "lrge_pdf_en": ["2017 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-lp-17e.pdf"],
-      "lrge_pdf_fr": ["2017 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-lp-17f.pdf"],
+      "lrge_pdf_fr": ["Pas disponible"],
       "dwld_etx_en": ["2017 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-17e.txt"],
-      "dwld_etx_fr": ["2017 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-17f.txt"]
+      "dwld_etx_fr": ["Pas disponible"]
     },
     {
       "year": "2016",
@@ -106,9 +106,9 @@
       "stnd_pdf_en": ["2016 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-16e.pdf"],
       "stnd_pdf_fr": ["2016 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-16f.pdf"],
       "lrge_pdf_en": ["2016 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-lp-16e.pdf"],
-      "lrge_pdf_fr": ["2016 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-lp-16f.pdf"],
+      "lrge_pdf_fr": ["Pas disponible"],
       "dwld_etx_en": ["2016 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-16e.txt"],
-      "dwld_etx_fr": ["2016 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-16f.txt"]
+      "dwld_etx_fr": ["Pas disponible"]
     }
   ]
 }
