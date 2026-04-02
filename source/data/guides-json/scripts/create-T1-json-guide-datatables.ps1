@@ -759,21 +759,6 @@ function Set-PairInRowAndJson {
   $JsonTextRef.Value = $jsonText
 }
 
-function Set-FieldInRowAndJson {
-  param(
-    [Parameter(Mandatory)] [psobject]$Row,
-    [Parameter(Mandatory)] [string]$YearValue,
-    [Parameter(Mandatory)] [string]$Key,
-    [Parameter(Mandatory)] [object[]]$Value,
-    [Parameter(Mandatory)] [ref]$JsonTextRef
-  )
-
-  $Row.$Key = $Value
-  $jsonText = [string]$JsonTextRef.Value
-  $jsonText = Replace-ArrayInYearObject -JsonText $jsonText -Year $YearValue -KeyName $Key -NewArrayJson (Convert-ArrayToInlineJson -Value $Value)
-  $JsonTextRef.Value = $jsonText
-}
-
 function Set-PairToNotAvailable {
   param(
     [Parameter(Mandatory)] [psobject]$Row,
@@ -784,19 +769,6 @@ function Set-PairToNotAvailable {
   )
 
   Set-PairInRowAndJson -Row $Row -YearValue $YearValue -EnKey $EnKey -EnValue $EN_NA -FrKey $FrKey -FrValue $FR_NA -JsonTextRef $JsonTextRef
-}
-
-function Set-FieldToNotAvailable {
-  param(
-    [Parameter(Mandatory)] [psobject]$Row,
-    [Parameter(Mandatory)] [string]$YearValue,
-    [Parameter(Mandatory)] [string]$Key,
-    [Parameter(Mandatory)] [ValidateSet('en', 'fr')] [string]$Lang,
-    [Parameter(Mandatory)] [ref]$JsonTextRef
-  )
-
-  $value = if ($Lang -eq 'en') { $EN_NA } else { $FR_NA }
-  Set-FieldInRowAndJson -Row $Row -YearValue $YearValue -Key $Key -Value $value -JsonTextRef $JsonTextRef
 }
 
 function Normalize-NaArrayLiterals {
@@ -920,28 +892,24 @@ foreach ($pub in $pubsForGeneration) {
 
       $enIsNA = Is-NotAvailablePair -Value $enVal -Lang 'en'
       $frIsNA = Is-NotAvailablePair -Value $frVal -Lang 'fr'
+      if ($enIsNA -or $frIsNA) {
+        Set-PairToNotAvailable -Row $row -YearValue $yearValue -EnKey $enKey -FrKey $frKey -JsonTextRef ([ref]$outJsonFinal)
+        $changedPairs++
+        continue
+      }
 
       $enUrl = Get-LinkUrl -Value $enVal
       $frUrl = Get-LinkUrl -Value $frVal
-      $enInvalid = $false
-      $frInvalid = $false
+      if (-not $enUrl -and -not $frUrl) { continue }
+      if (-not $enUrl -or -not $frUrl) { continue }
 
-      if (-not $enIsNA -and $enUrl) {
-        $enInvalid = -not (Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects)
-      }
-      if (-not $frIsNA -and $frUrl) {
-        $frInvalid = -not (Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects)
-      }
+      $enValid = Test-Url200 -Url $enUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects
+      $frValid = Test-Url200 -Url $frUrl -TimeoutSec $TimeoutSec -RequestDelayMs $RequestDelayMs -RetryCount $RetryCount -RetryDelayMs $RetryDelayMs -MaxRedirects $MaxRedirects
 
-      if ($enInvalid) {
-        Set-FieldToNotAvailable -Row $row -YearValue $yearValue -Key $enKey -Lang 'en' -JsonTextRef ([ref]$outJsonFinal)
-      }
-      if ($frInvalid) {
-        Set-FieldToNotAvailable -Row $row -YearValue $yearValue -Key $frKey -Lang 'fr' -JsonTextRef ([ref]$outJsonFinal)
-      }
-      if ($enInvalid -or $frInvalid) {
-        $changedPairs++
-      }
+      if ($enValid -and $frValid) { continue }
+
+      Set-PairToNotAvailable -Row $row -YearValue $yearValue -EnKey $enKey -FrKey $frKey -JsonTextRef ([ref]$outJsonFinal)
+      $changedPairs++
     }
   }
 
