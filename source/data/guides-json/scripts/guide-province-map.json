@@ -1,0 +1,125 @@
+{
+  "5001-pc": {
+    "kind": "province",
+    "name_en": "Newfoundland and Labrador",
+    "name_fr": "Terre-Neuve-et-Labrador",
+    "fr_preposition": "de",
+    "slug_en": "newfoundland-labrador",
+    "slug_fr": "terre-neuve-labrador",
+    "html_profile": "standard"
+  },
+  "5002-pc": {
+    "kind": "province",
+    "name_en": "Prince Edward Island",
+    "name_fr": "Île-du-Prince-Édouard",
+    "fr_preposition": "de l'",
+    "slug_en": "prince-edward-island",
+    "slug_fr": "ile-prince-edouard",
+    "html_profile": "standard"
+  },
+  "5003-pc": {
+    "kind": "province",
+    "name_en": "Nova Scotia",
+    "name_fr": "Nouvelle-Écosse",
+    "fr_preposition": "de la",
+    "slug_en": "nova-scotia",
+    "slug_fr": "nouvelle-ecosse",
+    "html_profile": "nova_scotia"
+  },
+  "5004-pc": {
+    "kind": "province",
+    "name_en": "New Brunswick",
+    "name_fr": "Nouveau-Brunswick",
+    "fr_preposition": "du",
+    "slug_en": "new-brunswick",
+    "slug_fr": "nouveau-brunswick",
+    "html_profile": "standard"
+  },
+  "5005-pc": {
+    "kind": "province",
+    "name_en": "Quebec",
+    "name_fr": "Québec",
+    "fr_preposition": "du",
+    "slug_en": "quebec",
+    "slug_fr": "quebec",
+    "html_profile": "standard"
+  },
+  "5006-pc": {
+    "kind": "province",
+    "name_en": "Ontario",
+    "name_fr": "Ontario",
+    "fr_preposition": "de l'",
+    "slug_en": "ontario",
+    "slug_fr": "ontario",
+    "html_profile": "ontario"
+  },
+  "5007-pc": {
+    "kind": "province",
+    "name_en": "Manitoba",
+    "name_fr": "Manitoba",
+    "fr_preposition": "du",
+    "slug_en": "manitoba",
+    "slug_fr": "manitoba",
+    "html_profile": "direct"
+  },
+  "5008-pc": {
+    "kind": "province",
+    "name_en": "Saskatchewan",
+    "name_fr": "Saskatchewan",
+    "fr_preposition": "de la",
+    "slug_en": "saskatchewan",
+    "slug_fr": "saskatchewan",
+    "html_profile": "saskatchewan"
+  },
+  "5009-pc": {
+    "kind": "province",
+    "name_en": "Alberta",
+    "name_fr": "Alberta",
+    "fr_preposition": "de l'",
+    "slug_en": "alberta",
+    "slug_fr": "alberta",
+    "html_profile": "standard"
+  },
+  "5010-pc": {
+    "kind": "province",
+    "name_en": "British Columbia",
+    "name_fr": "Colombie-Britannique",
+    "fr_preposition": "de la",
+    "slug_en": "british-columbia",
+    "slug_fr": "colombie-britannique",
+    "html_profile": "standard"
+  },
+  "5011-pc": {
+    "kind": "province",
+    "name_en": "Yukon",
+    "name_fr": "Yukon",
+    "fr_preposition": "du",
+    "slug_en": "yukon",
+    "slug_fr": "yukon",
+    "html_profile": "standard"
+  },
+  "5012-pc": {
+    "kind": "province",
+    "name_en": "Northwest Territories",
+    "name_fr": "Territoires du Nord-Ouest",
+    "fr_preposition": "des",
+    "slug_en": "northwest-territories",
+    "slug_fr": "territoires-nord-ouest",
+    "html_profile": "standard"
+  },
+  "5013-g": {
+    "kind": "non_resident",
+    "label_en_prefix": "Tax and benefit guide for non-residents and deemed residents of Canada",
+    "label_fr_prefix": "Guide d'impôt et de prestations pour les non-résidents et les résidents réputés du Canada",
+    "html_profile": "non_resident"
+  },
+  "5014-pc": {
+    "kind": "province",
+    "name_en": "Nunavut",
+    "name_fr": "Nunavut",
+    "fr_preposition": "du",
+    "slug_en": "nunavut",
+    "slug_fr": "nunavut",
+    "html_profile": "nunavut"
+  }
+}
