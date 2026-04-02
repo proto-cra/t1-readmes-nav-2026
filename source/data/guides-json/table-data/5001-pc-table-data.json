@@ -94,10 +94,10 @@
       "html_acc_fr": ["Renseignements sur l'impôt de Terre-Neuve-et-Labrador pour 2017", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2017/terre-neuve-labrador/5001-pc/renseignements-residents-terre-neuve-labrador.html"],
       "stnd_pdf_en": ["2017 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-17e.pdf"],
       "stnd_pdf_fr": ["2017 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-17f.pdf"],
-      "lrge_pdf_en": ["Not available"],
-      "lrge_pdf_fr": ["Pas disponible"],
-      "dwld_etx_en": ["Not available"],
-      "dwld_etx_fr": ["Pas disponible"]
+      "lrge_pdf_en": ["2017 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-lp-17e.pdf"],
+      "lrge_pdf_fr": ["2017 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-lp-17f.pdf"],
+      "dwld_etx_en": ["2017 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-17e.txt"],
+      "dwld_etx_fr": ["2017 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-17f.txt"]
     },
     {
       "year": "2016",
@@ -105,10 +105,10 @@
       "html_acc_fr": ["Renseignements sur l'impôt de Terre-Neuve-et-Labrador pour 2016", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2016/terre-neuve-labrador/5001-pc/renseignements-residents-terre-neuve-labrador.html"],
       "stnd_pdf_en": ["2016 - Standard PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-16e.pdf"],
       "stnd_pdf_fr": ["2016 - PDF standard", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-16f.pdf"],
-      "lrge_pdf_en": ["Not available"],
-      "lrge_pdf_fr": ["Pas disponible"],
-      "dwld_etx_en": ["Not available"],
-      "dwld_etx_fr": ["Pas disponible"]
+      "lrge_pdf_en": ["2016 - Large print PDF", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-lp-16e.pdf"],
+      "lrge_pdf_fr": ["2016 - PDF en gros caractères", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-lp-16f.pdf"],
+      "dwld_etx_en": ["2016 - E-text file", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5001-pc-16e.txt"],
+      "dwld_etx_fr": ["2016 - Fichier .txt", "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/5001-pc/5101-pc-16f.txt"]
     }
   ]
 }

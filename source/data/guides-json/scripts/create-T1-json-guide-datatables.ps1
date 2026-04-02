@@ -30,8 +30,23 @@ $ErrorActionPreference = 'Stop'
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $defaultGuideOutputDir = 'C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\guides-json\table-data'
+$defaultOutputEncoding = [System.Text.UTF8Encoding]::new($false)
 $EN_NA = @('Not available')
 $FR_NA = @('Pas disponible')
+
+function Assert-NoMojibakeText {
+  param(
+    [Parameter(Mandatory)] [string]$Text,
+    [Parameter(Mandatory)] [string]$Context
+  )
+
+  $containsReplacementChar = $Text.IndexOf([string][char]0xFFFD, [System.StringComparison]::Ordinal) -ge 0
+  $containsUtf8MojibakeLead = ($Text.IndexOf([char]0x00C3) -ge 0) -or ($Text.IndexOf([char]0x00C2) -ge 0)
+
+  if ($containsReplacementChar -or $containsUtf8MojibakeLead) {
+    throw "Detected mojibake in $Context. Save the source JSON/script files as UTF-8 before generating outputs."
+  }
+}
 
 function Resolve-ExistingPath {
   param(
@@ -306,6 +321,22 @@ function New-LinkArray {
   return @($Label, $Url)
 }
 
+function Join-FrenchPrepositionAndName {
+  param(
+    [Parameter(Mandatory)] [string]$Preposition,
+    [Parameter(Mandatory)] [string]$Name
+  )
+
+  $trimmedPreposition = $Preposition.TrimEnd()
+  $trimmedName = $Name.TrimStart()
+
+  if ($trimmedPreposition.EndsWith("'")) {
+    return "$trimmedPreposition$trimmedName"
+  }
+
+  return "$trimmedPreposition $trimmedName"
+}
+
 function Get-ProvinceLabelFrPrefix {
   param([Parameter(Mandatory)] [hashtable]$Meta)
 
@@ -316,7 +347,8 @@ function Get-ProvinceLabelFrPrefix {
     throw "Guide metadata missing fr_preposition."
   }
 
-  return "Renseignements sur l'impôt $($Meta.fr_preposition) $($Meta.name_fr)"
+  $provinceName = Join-FrenchPrepositionAndName -Preposition ([string]$Meta.fr_preposition) -Name ([string]$Meta.name_fr)
+  return "Renseignements sur l'imp$([char]0x00F4)t $provinceName"
 }
 
 function Get-ProvinceHtmlUrls {
@@ -369,14 +401,6 @@ function Get-ProvinceHtmlUrls {
       return [pscustomobject]@{
         En = $enUrl
         Fr = $enUrl
-      }
-    }
-    'saskatchewan' {
-      if ([int]$Year -ge 2022) {
-        return [pscustomobject]@{
-          En = "$enBase/$GuideCode.html"
-          Fr = "$frBase/$GuideCode.html"
-        }
       }
     }
   }
@@ -778,6 +802,7 @@ foreach ($pub in $pubsForGeneration) {
 
   $document = Build-GuideDocumentFromTemplate -TemplateDocument $templateDocument -GuideCode $pub -MetadataMap $guideMetadataMap
   $outJson = (ConvertTo-TemplateJson -Document $document) + "`r`n"
+  Assert-NoMojibakeText -Text $outJson -Context "$pub generated JSON"
   $outPath = Join-Path $OutputDir "$pub-table-data.json"
 
   $generatedSources[$pub] = [pscustomobject]@{
@@ -789,7 +814,7 @@ foreach ($pub in $pubsForGeneration) {
   if ($DryRun) {
     Write-Host "[DRY RUN] $pub => would write $outPath"
   } else {
-    Write-TextFileWithEncoding -Path $outPath -Text $outJson -Encoding $templateFile.Encoding -TrailingNewlines $templateFile.TrailingNewlines
+    Write-TextFileWithEncoding -Path $outPath -Text $outJson -Encoding $defaultOutputEncoding -TrailingNewlines $templateFile.TrailingNewlines
   }
   $generatedTotal++
 }
@@ -883,7 +908,8 @@ foreach ($pub in $pubsForGeneration) {
     Write-Host "[DRY RUN] $pub => would modify $changedPairs pair(s) in $outPath"
   } else {
     $outJsonFinal = Normalize-NaArrayLiterals -JsonText $outJsonFinal
-    Write-TextFileWithEncoding -Path $outPath -Text $outJsonFinal -Encoding $sourceEncoding -TrailingNewlines $sourceTrailingNewlines
+    Assert-NoMojibakeText -Text $outJsonFinal -Context "$pub validated JSON"
+    Write-TextFileWithEncoding -Path $outPath -Text $outJsonFinal -Encoding $defaultOutputEncoding -TrailingNewlines $sourceTrailingNewlines
     Write-Host "$pub => modified $changedPairs pair(s)."
   }
   $validatedTotal++
