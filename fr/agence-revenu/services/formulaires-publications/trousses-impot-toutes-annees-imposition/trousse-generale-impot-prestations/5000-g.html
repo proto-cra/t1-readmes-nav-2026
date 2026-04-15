@@ -1674,7 +1674,7 @@ notedlinks:
     "multiplequery": true
   }'></section>
   <!-- Data source -->
-  <section id="sourceData" data-wb-jsonmanager='{ "url": "{{ site.baseurl }}/source/data/yr-prov.json", "patches": { "op": "add", "path": "/select", "value": {} }, "name": "sourceData", "debug": false } '></section>
+  <section id="sourceData" data-wb-jsonmanager='{ "url": "{{ site.baseurl }}/source/data/yr-prov.json", "patches": { "op": "add", "path": "/select", "value": { "region": ["", "", "", ""] } }, "name": "sourceData", "debug": false } '></section>
   <!-- Manager to receive the URL mapping update from the "year" parameter -->
   <section id="define-the-year" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "wait": true, "name": "year-set", "debug": false } '></section>
   <section id="define-the-region" data-wb-jsonmanager-reload data-wb-jsonmanager='{ "url": "#[sourceData]", "name": "region-set", "debug": false } '></section>
