@@ -1,0 +1,93 @@
+<!--
+Created by: Adam Monsour
+Initiated: August 15, 2017
+Modified by: Amber LeBlanc
+Modified date: March 26, 2019
+-->	
+		
+<html   lang="fra"
+		data="((Custom.Dir))\db\data-readme.xml"
+		loc="((Custom.Dir))\data\jcr_root\content\canadasite\fr\agence-revenu\services\formulaires-publications\formulaires-publications-annees-passees\"
+		title="((name)).ToUpper() ARCHIV&#201;E - ((title))"
+		fileName="archivee-((name))"
+		mode="replace"
+		replaceChildrenAEM="false"
+		overrideDate="true"
+		depth="2"
+		contentTypes="guidance">
+	  
+	<header>
+		<title>((name)).ToUpper() ARCHIV&#201;E &#8212; ((title))</title>
+		<altTitle source="((Custom.Key))" remove="-f" add="-e" type="end">((name)).ToUpper() ARCHIVED - ((title))</altTitle>
+		<unique val="f@@true@@true">((language))@@((pub))@@((priorYear))</unique>
+		<excludes val="t2203@@rc4018@@t4008@@t4032@@t4127">((name))@@((name))@@((name))@@((name))@@((name))</excludes>
+		<meta name="keywords">((keywords))</meta>
+		<meta name="description">((description))</meta>
+		<meta name="subject">((subject))</meta>
+		<meta name="contributor">((contributor))</meta>
+		<meta name="contentprovider">((contentprovider))</meta>
+		<meta name="gcAltLanguagePeer">/content/canadasite/en/revenue-agency/services/forms-publications/previous-year-forms-publications/archived-((name)).html</meta>
+		<meta name="otherName">archived-((name))</meta>
+		<meta name="otherPath">/content/canadasite/en/revenue-agency/services/forms-publications/previous-year-forms-publications/</meta>
+        <meta name="gcModifiedOverride" format="yyyy-MM-dd">((pubDate))</meta>		
+	</header>
+
+	<generic-text>
+		<h1 id="wb-cont">ARCHIV&#201;E - ((name)).ToUpper() ((title))</h1>
+		<!--Rescue link-->
+	 	<section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pub/((name)).txt#((name))-rescue-fra"></section>
+	  <!--Alert space-->
+	  <div required="notice">((notice))</div>
+	  <section required="ajaxid" data-ajax-replace="/content/dam/cra-arc/formspubs/include/((ajaxid)).txt#((ajaxid))-fra"></section>
+	  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pub/((name)).txt#((name))-fra"></section>
+	  
+	  <!--Description-->
+	  <p required="description" class="mrgn-bttm-md">((description))</p>
+	  <!--Ways to access the information-->
+	  <h2 required="((html)) || ((pdf)) || ((largePrint))">Fa&#231;ons d'obtenir la publication</h2>
+	  <ul class="fa-ul">
+		<!--Flat-->
+		<li required="((html)) || ((pdf)) || ((largePrint))"><span class="far fa-file-alt text-muted fa-lg fa-li"></span>
+		  <h3>Lire la publication</h3>
+		  <ul>
+			  <li required="html">Format en ligne <a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/publications/((name))/((html)).HTMLFix()">((name))-f.html</a></li>
+			<li required="pdf" split=";" sub=":" source="((pdf))"><a href="/content/dam/cra-arc/formspubs/pub/((name))/((1))">PDF en caract&#232;res standards (((1)))</a></li>
+			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pub/((name))/((1))">PDF en gros caract&#232;res (((1)))</a></li>
+		  </ul>
+		  <details required="priorYear" class="max-content mrgn-tp-md mrgn-lft-md">
+			<summary required="priorYear">Ann&#233;es pr&#233;c&#233;dentes&#160;: Publications PDF en caract&#232;res standards</summary>
+			<p required="priorYear">Cette publication est &#233;galement disponible pour les ann&#233;es suivantes&#160;:</p>
+			<ul required="priorYear" class="lst-none">
+			  <li required="((pub)) %% ((priorYear))" split=";" sub=":" source="((priorYear))" sort="1;desc" hash="{'PDF en caract&#232;res standards':'.pdf'}" exclude="-fill-;-lp-;.txt;.brf"><a href="/content/dam/cra-arc/formspubs/pub/((name))/((2))">((1)) &#8211; ((Custom.Hash)) (((2)))</a></li>
+			</ul>
+		  </details>
+		</li>
+		<!--E-text-->
+		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
+		  <h3>T&#233;l&#233;chargez la publication et &#233;coutez le texte</h3>
+		  <p>Utilisez le lecteur d'&#233;cran de votre choix pour &#233;couter le fichier texte &#233;lectronique.</p>
+		  <ul>
+			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pub/((name))/((1))">Texte &#233;lectronique (((1)))</a></li>
+		  </ul>
+		</li>
+		<!--Order Alt Format-->
+		<li required="((pdf)) || ((pdfFillable))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
+		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-fra">
+		  <h3>Demandez la publication en format substitut</h3>
+		  <p>Vous pouvez commander la publication en d'autres formats, comme en fichier audio num&#233;rique, en texte &#233;lectronique, en braille et en gros caract&#232;res.</p>
+		  <ul>
+			  <li>
+			  <a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/aide-formulaires-publications/a-propos-formats-alternatifs-substituts.html" class="nowrap">Commander des formats substituts pour les personnes handicap&#233;es</a></li>
+		  </ul> 
+		  </section>
+		</li>
+	  </ul>
+	  <!--Instructions-->
+	  <section data-ajax-replace="/content/canadasite/fr/agence-revenu/services/formulaires-publications/publications/((name))/instructions.html#instr"></section>
+	  <!--Related documents-->
+	  <h2 required="related_documents">Documents connexes</h2>
+	  <ul required="related_documents">
+		<li required="related_documents" split=";" sub="::" source="((related_documents))"><a href="((2))">((1))</a></li>
+	  </ul>
+	</generic-text>	
+</html>

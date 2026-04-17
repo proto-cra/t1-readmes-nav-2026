@@ -1,0 +1,130 @@
+<!--
+Created by: Adam Monsour
+Initiated: August 15, 2017
+Modified by: Amber LeBlanc
+Modified date: August 1, 2023
+-->
+
+<html   lang="eng"
+		data="((Custom.Dir))\db\data-readme.xml"
+		loc="((Custom.Dir))\data\jcr_root\content\canadasite\en\revenue-agency\services\forms-publications\forms\"
+		title="((name)).ToUpper() ((title))"
+		fileName="((name))"
+		mode="replace"
+		replaceChildrenAEM="false"
+		overrideDate="true"
+		depth="2"
+		contentTypes="forms">
+	  
+	<header>
+		<title>((name)).ToUpper() ((title))</title>
+		<altTitle source="((Custom.Key))" remove="-e" add="-f"  type="end">((name)).ToUpper() ((title))</altTitle>
+		<unique val="e@@true@@true">((language))@@((pbg))@@((currentVersion))</unique>
+		<excludes val="t3010@@t1134@@t2203">((name))@@((name))@@((name))</excludes> 
+		<meta name="keywords">((keywords))</meta>
+		<meta name="description">((description))</meta>
+		<meta name="subject">((subject))</meta>
+		<meta name="gcAltLanguagePeer">/content/canadasite/fr/agence-revenu/services/formulaires-publications/formulaires/((name)).html</meta>
+		<meta name="otherName">((name))</meta>
+		<meta name="otherPath">/content/canadasite/fr/agence-revenu/services/formulaires-publications/formulaires/</meta>
+		<meta name="contributor">((contributor))</meta>
+		<meta name="contentprovider">((contentprovider))</meta>
+        <meta name="gcModifiedOverride" format="yyyy-MM-dd">((pubDate))</meta>
+	</header>
+	
+	<generic-text>
+	  <h1 id="wb-cont">((name)).ToUpper() ((title))</h1>
+	  <!--Rescue link-->
+	  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pbg/((name)).txt#((name))-rescue-eng"></section>
+	  <!--Alert space-->
+	  <div required="notice">((notice))</div>
+	  <section required="ajaxid" data-ajax-replace="/content/dam/cra-arc/formspubs/include/((ajaxid)).txt#((ajaxid))-eng"></section>
+	  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pbg/((name)).txt#((name))-eng"></section>
+	  <!--PDF instructions-->
+	  <section id="instructions" class="mfp-hide modal-dialog modal-content overlay-def">
+		<header class="modal-header">
+		  <h2 class="modal-title">Download instructions for fillable PDFs</h2>
+		</header>
+		<div class="modal-body">
+		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pdf-instructions.txt#pdf-forms-eng">
+			<p class="mrgn-tp-md">You <strong>must download</strong> the accessible fillable PDF to your computer. Use <a href="https://get.adobe.com/reader/">Acrobat Reader 10 or later</a> to open the file. Do <strong>not</strong> click the link to open it in your web browser. </p>
+			<ol>
+			  <li>Download and save the PDF to your computer</li>
+			  <li>Open the downloaded PDF in Acrobat Reader 10 or later</li>
+			</ol>		  
+		  </section>
+		</div>
+	  </section>
+	  <!--Description-->
+	  <p required="description" class="mrgn-bttm-md">((description))</p>
+	  <!--Ways to get the form-->
+	  <h2 required="((pdfFillable)) || ((pdf)) || ((html))">Ways to get the form</h2>
+	  <ul class="fa-ul">
+		<!--Online--> 
+		<li required="html"><span class="fas fa-laptop text-muted fa-lg fa-li"></span> 
+			<section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pbg/((name)).txt#((name))-online-eng"> 
+		<h3>Use the online form</h3> 
+		<ul> 
+		<li required="html" split=";" sub="::" source="((html))"><a href="((2))">((1)) (web version)</a></li> 
+		</ul> 
+			</section> 
+		</li> 
+		<!--Fillable-->
+		<li required="pdfFillable"><span class="fas fa-file-download text-muted fa-lg fa-li"></span>
+		  <h3>Download and fill out with Acrobat Reader</h3>
+		  <p class="mrgn-bttm-md">You <strong>must </strong> <a class="wb-lbx" href="#instructions">download and open fillable <span class="nowrap">PDFs<span class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher.</p>
+		  <ul>
+			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))"><span class="wb-inv">Accessible</span> Fillable PDF (((1)))</a></li>
+		  </ul>
+		  <details required="priorYear" class="max-content mrgn-tp-md mrgn-lft-md">
+			<summary required="priorYear">Previous years: <span class="wb-inv">Accessible</span> Fillable PDFs</summary>
+			<p required="priorYear">This form is also available for the years listed below:</p>
+			<ul required="priorYear" class="lst-none">
+			  <li required="((pbg)) %% ((priorYear))" split=";" sub=":" source="((priorYear))" sort="1;desc" hash="{'Fillable PDF':'-fill-'}"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((2))">((1)) &#8211; ((Custom.Hash)) (((2)))</a></li>
+			</ul>
+		  </details>
+		</li>
+		<!--Flat-->
+		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
+		  <h3>Print and fill out by hand</h3>
+		  <ul>
+			<li required="pdf" split=";" sub=":" source="((pdf))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Standard print PDF (((1)))</a></li>
+			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Large print PDF (((1)))</a></li>
+		  </ul>
+		  <details required="priorYear" class="max-content mrgn-tp-md mrgn-lft-md">
+			<summary required="priorYear">Previous years: Standard print PDFs</summary>
+			<p required="priorYear">This form is also available for the years listed below:</p>
+			<ul required="priorYear" class="lst-none">
+			  <li required="((pbg)) %% ((priorYear))" split=";" sub=":" source="((priorYear))" sort="1;desc" hash="{'Standard print PDF':'.pdf'}" exclude="-fill-;-lp-;.txt;.brf"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((2))">((1)) &#8211; ((Custom.Hash)) (((2)))</a></li>
+			</ul>
+		  </details>
+		</li>
+		<!--E-text-->
+		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
+		  <h3>Download and listen</h3>
+		  <p>Use your preferred screen reader to listen to the e-text file.</p>
+		  <ul>
+			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">E-text (((1)))</a></li>
+		  </ul>
+		</li>
+		<!--Order Alt Format-->
+		<li required="((pdf)) || ((pdfFillable))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
+		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
+		  <h3>Ask for an alternate format</h3>
+		  <p>You can order alternate formats such as digital audio, electronic text, braille, and large print.</p>
+		  <ul>
+			  <li>
+			  <a href="/content/canadasite/en/revenue-agency/services/forms-publications/help-forms-publications/about-multiple-formats.html">Order alternate formats for persons with disabilities</a></li>
+		  </ul> 
+		  </section>
+		</li>
+	  </ul>
+	  <!--Instructions-->
+	  <section data-ajax-replace="/content/canadasite/en/revenue-agency/services/forms-publications/forms/((name))/instructions.html#instr"></section>
+	  <!--Related documents-->
+	  <h2 required="related_documents">Related documents</h2>
+	  <ul required="related_documents">
+		<li required="related_documents" split=";" sub="::" source="((related_documents))"><a href="((2))">((1))</a></li>
+	  </ul>
+	</generic-text>
+</html>
