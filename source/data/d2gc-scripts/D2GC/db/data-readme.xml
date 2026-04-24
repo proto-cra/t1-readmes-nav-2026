@@ -132,32 +132,70 @@
         <availableInPrint/>
         <currentversion>true</currentversion>
     </R5000-s2-f>
+    <R5009-r-e>
+        <language>e</language>
+        <name>5009-r</name>
+		<upname>5009-R</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Income Tax and Benefit Return (for AB)</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description/>
+        <subject>Economics and Industry;Taxes</subject>
+        <keywords/>
+        <path>/pbg/5009-r</path>
+        <notice/>
+        <html/>
+        <pdf>5009-r-25e.pdf:</pdf>
+        <pdfFillable>5009-r-fill-25e.pdf:</pdfFillable>
+        <eText>5009-r-25e.txt:</eText>
+        <largePrint>5009-r-lp-25e.pdf:</largePrint>
+        <braille/>
+        <priorYear/>
+        <pub/>
+        <pbg>true</pbg>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>true</currentversion>
+    </R5009-r-e>
+    <R5009-r-f>
+        <language>f</language>
+        <name>5009-r</name>
+		<upname>5009-R</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Déclaration de revenus et de prestations (pour AB) - T1 Générale - 2025</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description/>
+        <subject>Économie et industrie;Impôt</subject>
+        <keywords/>
+        <path>/pbg/5009-r</path>
+        <notice/>
+        <html/>
+        <pdf>5009-r-25f.pdf:</pdf>
+        <pdfFillable>5009-r-fill-25f.pdf:</pdfFillable>
+        <eText>5009-r-25f.txt:</eText>
+        <largePrint>5009-r-lp-25f.pdf:</largePrint>
+        <braille/>
+        <priorYear/>
+        <pub/>
+        <pbg>true</pbg>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>true</currentversion>
+    </R5009-r-f>
 </edds>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

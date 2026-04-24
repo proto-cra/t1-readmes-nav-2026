@@ -33,7 +33,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	<generic-text>
 	  <h1 id="wb-cont">((name)).ToUpper() ((title))</h1>
 	  <p class="small text-muted">Gabarit T1 d&#233;clench&#233; et utilis&#233;.</p>
-	  <p class="small mrgn-tp-sm"><strong>Vous cherchez peut-&#234;tre :</strong> <a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations.html">Obtenir une trousse d&#8217;imp&#244;t T1</a></p>
+	  <p class="small mrgn-tp-sm"><strong>Vous cherchez peut-&#234;tre : </strong> <a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations.html">Obtenir une trousse d&#8217;imp&#244;t T1</a></p>
 	  <div class="clearfix" aria-hidden="true"></div>
 	  <!--Rescue link-->
 	  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pbg/((name)).txt#((name))-rescue-fra"></section>
@@ -48,7 +48,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</header>
 		<div class="modal-body">
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/pdf-instructions.txt#pdf-forms-fra">
-			<p class="mrgn-tp-md">Vous <strong>devez t&#233;l&#233;charger</strong> le PDF &#224; remplir accessible sur votre ordinateur. Utilisez <a href="https://get.adobe.com/fr/reader/">Acrobat Reader 10 ou une version ult&#233;rieure</a> pour ouvrir le fichier. Ne cliquez <strong>pas</strong> sur le lien pour l'ouvrir dans votre navigateur Web.</p>
+			<p class="mrgn-tp-md">Vous <strong>devez t&#233;l&#233;charger </strong> le PDF &#224; remplir accessible sur votre ordinateur. Utilisez <a href="https://get.adobe.com/fr/reader/">Acrobat Reader 10 ou une version ult&#233;rieure</a> pour ouvrir le fichier. Ne cliquez <strong>pas</strong> sur le lien pour l'ouvrir dans votre navigateur Web.</p>
 			<ol>
 			  <li>T&#233;l&#233;chargez et enregistrez le PDF sur votre ordinateur</li>
 			  <li>Ouvrez le PDF t&#233;l&#233;charg&#233; dans Acrobat Reader 10 ou une version ult&#233;rieure</li>
@@ -105,7 +105,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		  </section>
 		</li>
 		<!-- Previous year versions section -->
-		<li><span class="fas fa-history text-muted fa-lg fa-li"></span>
+		<li required="priorYear"><span class="fas fa-history text-muted fa-lg fa-li"></span>
 		  <h3 id="prvs-yrs">Obtenez une version des 9 ann&#233;es pr&#233;c&#233;dentes &#40;<span>((upname))</span>&#41;</h3>
 		  <p>Pour vous assurer d'acc&#233;der au <strong>bon</strong> formulaire, entrez l'<strong>ann&#233;e</strong> dans le filtre du tableau.</p>
 		  <section data-wb-jsonmanager='{
