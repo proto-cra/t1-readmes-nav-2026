@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">	<filter root="/content/canadasite/en/revenue-agency/services/forms-publications/publications/rc4065/jcr:content" mode="replace"/>
+	<filter root="/content/canadasite/fr/agence-revenu/services/formulaires-publications/publications/rc4065/jcr:content" mode="replace"/>
+</workspaceFilter>
