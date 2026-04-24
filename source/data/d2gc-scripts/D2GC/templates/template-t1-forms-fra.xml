@@ -59,7 +59,11 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	  <!--Description-->
 	  <p required="description" class="mrgn-bttm-md">((description))</p>
 	  <!--Ways to get the form-->
-	  <h2 required="((pdfFillable)) || ((pdf)) || ((largePrint)) || ((html)) || ((eText))">Fa&#231;ons d'obtenir le formulaire</h2>
+		  <h2>Fa&#231;ons d'obtenir le formulaire</h2>
+		  <div required="((currentversion)) == true %% true">
+		    <p>Ce formulaire <strong>n&#8217;est plus &#224; jour</strong>. Les versions des ann&#233;es pr&#233;c&#233;dentes sont disponibles.</p>
+	        <p>D&#233;couvrez comment utiliser les diff&#233;rents formats :</p>
+		  </div>
 	  <ul class="fa-ul">
 		<!--Online-->
 		<li required="html"><span class="fas fa-laptop text-muted fa-lg fa-li"></span>
@@ -78,6 +82,9 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))">PDF &#224; remplir <span class="wb-inv">accessible</span> (((1)))</a></li>
 		  </ul>
 		</li>
+		<li required="((currentversion)) == true %% true"><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>PDF &#224; remplir : </strong> <a class="wb-lbx"
+	      href="#instructions">T&#233;l&#233;chargez le PDF &#224; remplir et <span class="nowrap">ouvrez-le<span
+	      class="far fa-question-circle mrgn-lft-sm"></span></span></a> dans Acrobat Reader 10 ou dans une version plus r&#233;cente pour le remplir.</li>
 		<!--Flat-->
 		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
 		  <h3>Imprimez le formulaire actuel et <span class="nowrap">remplissez-le</span> &#224; la main</h3>
@@ -86,6 +93,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">PDF en gros caract&#232;res (((1)))</a></li>
 		  </ul>
 		</li>
+	    <li required="((currentversion)) == true %% true"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span> <strong>PDF standard ou en gros caract&#232;res :</strong> Imprimez le PDF standard ou le PDF en gros caract&#232;res pour le remplir &#224; la main.</li>
 		<!--E-text-->
 		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
 		  <h3>T&#233;l&#233;chargez le formulaire actuel et &#233;coutez le texte</h3>
@@ -94,8 +102,9 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Texte &#233;lectronique (((1)))</a></li>
 		  </ul>
 		</li>
-		<!--Order Alt Format-->
-		<li required="((pdf)) || ((pdfFillable)) || ((largePrint)) || ((eText))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
+	    <li required="((currentversion)) == true %% true"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span> <strong>Texte &#233;lectronique :</strong> T&#233;l&#233;chargez le fichier texte &#233;lectronique et utilisez le lecteur d'&#233;cran de votre choix pour l'&#233;couter. </li>
+		<!--Order Alt Format - when current version is true-->
+		<li required="((currentversion)) %% ((pdf)) || ((currentversion)) %% ((pdfFillable)) || ((currentversion)) %% ((largePrint)) || ((currentversion)) %% ((eText))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-fra">
 			<h3>Demandez le formulaire en format substitut</h3>
 			<p>Vous pouvez commander le formulaire en d'autres formats, comme en fichier audio num&#233;rique, en texte &#233;lectronique, en braille et en gros caract&#232;res.</p>
@@ -344,6 +353,15 @@ data-wb-tables='{
 			<template>
 			  <p data-paragraph="true" class="- hidden -* hidden *">Pour trouver d&#8217;autres formulaires ou guides de l'ann&#233;e <strong><span data-year="true">ann&#233;e</span></strong> dont vous pourriez avoir besoin <strong><span data-region="true">r&#233;gion</span></strong>, retournez &#224; la <a data-anchor="true" href="https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations---years----regions--.html">trousse d&#8217;imp&#244;t sur le revenu de [[years]] [[regions]]</a>.</p>
 			</template>
+		  </section>
+		</li>
+		<li required="((currentversion)) == true %% true"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
+		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-fra">
+			<h3>Demandez le formulaire en format substitut</h3>
+			<p>Vous pouvez commander le formulaire en d'autres formats, comme en fichier audio num&#233;rique, en texte &#233;lectronique, en braille et en gros caract&#232;res.</p>
+			<ul>
+			  <li><a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/aide-formulaires-publications/a-propos-formats-alternatifs-substituts.html" class="nowrap">Commander des formats substituts pour les personnes handicap&#233;es</a></li>
+			</ul>
 		  </section>
 		</li>
 		<!-- Archive section -->

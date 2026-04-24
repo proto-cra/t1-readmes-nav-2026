@@ -82,7 +82,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))"><span class="wb-inv">Accessible</span> Fillable PDF (((1)))</a></li>
 		  </ul>
 		</li>
-		<li required="((currentversion)) == true %% true"><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>Fillable PDF:</strong> <a class="wb-lbx"
+		<li required="((currentversion)) == true %% true"><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>Fillable PDF: </strong> <a class="wb-lbx"
           href="#instructions">Download the fillable PDF and open <span class="nowrap">it<span
           class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher to fill out.</li>
 		<!--Flat-->
