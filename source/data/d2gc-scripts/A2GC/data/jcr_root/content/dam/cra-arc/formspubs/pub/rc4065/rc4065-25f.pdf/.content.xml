@@ -9,30 +9,30 @@
         cq:parentPath="/content/dam/cra-arc/formspubs/pub/rc4065"
         dam:assetState="processed"  
 		dam:relativePath="cra-arc/formspubs/pub/rc4065/rc4065-25f.pdf"
-        jcr:lastModified="{Date}2026-04-24T11:47:41.863-04:00"
+        jcr:lastModified="{Date}2026-04-23T10:22:52.554-04:00"
         jcr:lastModifiedBy="parissa.nahachewsky"
         jcr:primaryType="dam:AssetContent">
         <metadata
             cq:tags="[gc:institutions/revenue-agency]"
 			dam:Author="Agence du revenu du Canada"
-			dam:extracted="{Date}2026-04-24T11:47:41.863-04:00"
+			dam:extracted="{Date}2026-04-23T10:22:52.554-04:00"
 			dc:format="application/pdf"
-            dc:modified="{Date}2026-04-24T11:47:41.863-04:00"
+            dc:modified="{Date}2026-04-23T10:22:52.554-04:00"
             dc:title="rc4065-25f.pdf"
 			dc:creator="Agence du revenu du Canada"
 			dc:description=""
 			dc:subject=""
 			dc:language="fr"
-            jcr:lastModified="{Date}2026-04-24T11:47:41.863-04:00"
+            jcr:lastModified="{Date}2026-04-23T10:22:52.554-04:00"
             jcr:lastModifiedBy="parissa.nahachewsky"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             jcr:title="rc4065-25f.pdf"
 			pdf:Title="rc4065-25f.pdf"
-			xmp:CreateDate="{Date}2026-04-24T11:47:41.863-04:00"
+			xmp:CreateDate="{Date}2026-04-23T10:22:52.554-04:00"
             xmp:CreatorTool=""
-            xmp:MetadataDate="{Date}2026-04-24T11:47:41.863-04:00"
-            xmp:ModifyDate="{Date}2026-04-24T11:47:41.863-04:00">
+            xmp:MetadataDate="{Date}2026-04-23T10:22:52.554-04:00"
+            xmp:ModifyDate="{Date}2026-04-23T10:22:52.554-04:00">
             <en
                 jcr:primaryType="nt:unstructured"
                 jcr:title="rc4065-25f.pdf"/>
