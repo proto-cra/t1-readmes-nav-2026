@@ -1,0 +1,66 @@
+***************************************************************************************************
+Started processing at [04/24/2026 11:47:41].
+***************************************************************************************************
+
+Running script version [3].
+
+***************************************************************************************************
+
+A2GC (Assets to Government of Canada)
+-------------------------------------
+Estimated final package size: 1.92 MB
+
+Step 1 of 7: Convert text documents to UTF8
+
+Converted to UTF8:
+5000-s2-25e.txt
+5000-s2-25f.txt
+
+Step 2 of 7: Remove previous assets from the package
+
+Removed folders:
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\jcr_root\content\dam\cra-arc\formspubs\pub\rc4065
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\jcr_root\content\dam\cra-arc\formspubs\pbg\5000-s2
+
+Step 3 of 7: Create new package structure
+
+Creating DAM file structure [pub]
+RC4065 - C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\jcr_root\content\dam\cra-arc\formspubs\pub\rc4065
+Completed Successfully.
+ 
+Creating DAM file structure [pbg]
+5000-S2 - C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\jcr_root\content\dam\cra-arc\formspubs\pbg\5000-s2
+Completed Successfully.
+ 
+Step 4 of 7: Update filter.xml and properties.xml files
+
+Updating...
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\META-INF\vault\filter.xml
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\data\META-INF\vault\properties.xml
+ 
+Username: parissa.nahachewsky
+Modified: 2026-04-24T11:47:41.863-04:00
+Version:  4.64
+
+Step 5 of 7: Create zip file
+
+Asset package created:
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\CRA-formspubs-assets-pn-4.64.zip
+Final package size: 1.65 MB
+
+Step 6 of 7: Creating list of assets to clear the cache
+
+List of assets:
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\CRA-formspubs-assets-pn-4.64.txt
+
+Step 7 of 7: Creating list of webpages to clear the cache
+
+Creating regex and comparing regex with all pages...
+Completed Successfully.
+ 
+List of pages:
+C:\my-working-files\GitHub\t1-readmes-nav-2026\source\data\d2gc-scripts\A2GC\CRA-formspubs-pages-pn-4.64.txt
+
+***************************************************************************************************
+Finished processing at [04/24/2026 11:47:56].
+***************************************************************************************************

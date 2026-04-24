@@ -5,10 +5,10 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="4d7e812d-e6ea-4f18-aea4-04c74815e4b1">
     <jcr:content
-        cq:name="rc4065-25f.pdf"
-        cq:parentPath="/content/dam/cra-arc/formspubs/pub/rc4065"
+        cq:name="5000-s2-25f.txt"
+        cq:parentPath="/content/dam/cra-arc/formspubs/pbg/5000-s2"
         dam:assetState="processed"  
-		dam:relativePath="cra-arc/formspubs/pub/rc4065/rc4065-25f.pdf"
+		dam:relativePath="cra-arc/formspubs/pbg/5000-s2/5000-s2-25f.txt"
         jcr:lastModified="{Date}2026-04-24T11:47:41.863-04:00"
         jcr:lastModifiedBy="parissa.nahachewsky"
         jcr:primaryType="dam:AssetContent">
@@ -16,9 +16,9 @@
             cq:tags="[gc:institutions/revenue-agency]"
 			dam:Author="Agence du revenu du Canada"
 			dam:extracted="{Date}2026-04-24T11:47:41.863-04:00"
-			dc:format="application/pdf"
+			dc:format="application/txt"
             dc:modified="{Date}2026-04-24T11:47:41.863-04:00"
-            dc:title="rc4065-25f.pdf"
+            dc:title="5000-s2-25f.txt"
 			dc:creator="Agence du revenu du Canada"
 			dc:description=""
 			dc:subject=""
@@ -27,21 +27,21 @@
             jcr:lastModifiedBy="parissa.nahachewsky"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
-            jcr:title="rc4065-25f.pdf"
-			pdf:Title="rc4065-25f.pdf"
+            jcr:title="5000-s2-25f.txt"
+			pdf:Title="5000-s2-25f.txt"
 			xmp:CreateDate="{Date}2026-04-24T11:47:41.863-04:00"
             xmp:CreatorTool=""
             xmp:MetadataDate="{Date}2026-04-24T11:47:41.863-04:00"
             xmp:ModifyDate="{Date}2026-04-24T11:47:41.863-04:00">
             <en
                 jcr:primaryType="nt:unstructured"
-                jcr:title="rc4065-25f.pdf"/>
+                jcr:title="5000-s2-25f.txt"/>
             <fr
                 jcr:primaryType="nt:unstructured"
-                jcr:title="rc4065-25f.pdf"/>
+                jcr:title="5000-s2-25f.txt"/>
             <foreign
                 jcr:primaryType="nt:unstructured"
-                jcr:title="rc4065-25f.pdf"/>
+                jcr:title="5000-s2-25f.txt"/>
         </metadata>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
