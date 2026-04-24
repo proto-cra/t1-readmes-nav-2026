@@ -17,7 +17,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	<header>
 		<title>((name)).ToUpper() ((title))</title>
 		<altTitle source="((Custom.Key))" remove="-f" add="-e" type="end">((name)).ToUpper() ((title))</altTitle>
-		<unique val="f@@true@@true">((language))@@((pbg))@@((currentVersion))</unique>
+		<unique val="f@@true">((language))@@((pbg))</unique>
 		<includes val="50*">((name))</includes>
 		<meta name="keywords">((keywords))</meta>
 		<meta name="description">((description))</meta>

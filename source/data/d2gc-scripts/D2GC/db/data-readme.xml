@@ -198,4 +198,97 @@
         <availableInPrint/>
         <currentversion>true</currentversion>
     </R5009-r-f>
+    <R5000-r-e>
+        <language>e</language>
+        <name>5000-r</name>
+		<upname>5000-R</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Income Tax and Benefit Return (for multiple provinces and territories)</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description/>
+        <subject>Economics and Industry;Taxes</subject>
+        <keywords/>
+        <path>/pbg/5000-r</path>
+        <notice/>
+        <html/>
+        <pdf/>
+        <pdfFillable/>
+        <eText/>
+        <largePrint/>
+        <braille/>
+        <priorYear>true</priorYear>
+        <pub/>
+        <pbg>true</pbg>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>false</currentversion>
+    </R5000-r-e>
+    <R5000-r-f>
+        <language>f</language>
+        <name>5000-r</name>
+		<upname>5000-R</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Déclaration de revenus et de prestations (pour plusieurs provinces et territoires)</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description/>
+        <subject>Économie et industrie;Impôt</subject>
+        <keywords/>
+        <path>/pbg/5000-r</path>
+        <notice/>
+        <html/>
+        <pdf/>
+        <pdfFillable/>
+        <eText/>
+        <largePrint/>
+        <braille/>
+        <priorYear>true</priorYear>
+        <pub/>
+        <pbg>true</pbg>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>false</currentversion>
+    </R5000-r-f>
 </edds>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

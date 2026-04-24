@@ -17,7 +17,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	<header>
 		<title>((name)).ToUpper() ((title))</title>
 		<altTitle source="((Custom.Key))" remove="-e" add="-f" type="end">((name)).ToUpper() ((title))</altTitle>
-		<unique val="e@@true@@true">((language))@@((pbg))@@((currentVersion))</unique>
+		<unique val="e@@true">((language))@@((pbg))</unique>
 		<includes val="50*">((name))</includes>
 		<meta name="keywords">((keywords))</meta>
 		<meta name="description">((description))</meta>
@@ -59,7 +59,11 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	  <!--Description-->
 	  <p required="description" class="mrgn-bttm-md">((description))</p>
 	  <!--Ways to get the form-->
-	  <h2 required="((pdfFillable)) || ((pdf)) || ((largePrint)) || ((html)) || ((eText))">Ways to get the form</h2>
+	  <h2>Ways to get the form</h2>
+	  <div required="((currentversion)) == true %% true">
+	    <p>This form <strong>is no longer current</strong>. Previous year versions are available.</p>
+        <p>Find out how to use the different formats:</p>
+	  </div>
 	  <ul class="fa-ul">
 		<!--Online-->
 		<li required="html"><span class="fas fa-laptop text-muted fa-lg fa-li"></span>
@@ -78,6 +82,9 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))"><span class="wb-inv">Accessible</span> Fillable PDF (((1)))</a></li>
 		  </ul>
 		</li>
+		<li required="((currentversion)) == true %% true"><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>Fillable PDF:</strong> <a class="wb-lbx"
+          href="#instructions">Download the fillable PDF and open <span class="nowrap">it<span
+          class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher to fill out.</li>
 		<!--Flat-->
 		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
 		  <h3>Print the current form and fill out by hand</h3>
@@ -86,6 +93,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Large print PDF (((1)))</a></li>
 		  </ul>
 		</li>
+        <li required="((currentversion)) == true %% true"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span> <strong>Standard or large print PDF:</strong> Print the standard or large print PDF to fill out by hand.</li>
 		<!--E-text-->
 		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
 		  <h3>Download the current form and listen</h3>
@@ -94,8 +102,9 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">E-text (((1)))</a></li>
 		  </ul>
 		</li>
-		<!--Order Alt Format-->
-		<li required="((pdf)) || ((pdfFillable)) || ((largePrint)) || ((eText))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
+        <li required="((currentversion)) == true %% true"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span> <strong>E-text:</strong> Download and use your preferred screen reader to listen to the e-text file. </li>
+		<!--Order Alt Format - when current version is true-->
+		<li required="((currentversion)) %% ((pdf)) || ((currentversion)) %% ((pdfFillable)) || ((currentversion)) %% ((largePrint)) || ((currentversion)) %% ((eText))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
 			<h3>Ask for an alternate format</h3>
 			<p>You can order alternate formats such as digital audio, electronic text, braille, and large print.</p>
@@ -344,6 +353,15 @@ data-wb-tables='{
 			<template>
 			  <p data-paragraph="true" class="mrgn-tp-lg - hidden -* hidden *">To find other <strong><span data-year="true">year</span></strong> forms or guides you may need <strong><span data-region="true">region</span></strong>, return to the <a data-anchor="true" href="https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package---years----regions--.html">[[years]] Income tax package [[regions]]</a>.</p>
 			</template>
+		  </section>
+		</li>
+		<li required="((currentversion)) == true %% true">
+		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
+			<h3>Ask for an alternate format</h3>
+			<p>You can order alternate formats such as digital audio, electronic text, braille, and large print.</p>
+			<ul>
+			  <li><a href="/content/canadasite/en/revenue-agency/services/forms-publications/help-forms-publications/about-multiple-formats.html">Order alternate formats for persons with disabilities</a></li>
+			</ul>
 		  </section>
 		</li>
 		<!-- Archive section -->
