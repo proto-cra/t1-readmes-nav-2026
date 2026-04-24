@@ -63,6 +63,13 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	  <div required="((currentversion)) == true %% true">
 	    <p>This form <strong>is no longer current</strong>. Previous year versions are available.</p>
         <p>Find out how to use the different formats:</p>
+	    <ul class="fa-ul">
+		  <li><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>Fillable PDF: </strong> <a class="wb-lbx"
+            href="#instructions">Download the fillable PDF and open <span class="nowrap">it<span
+            class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher to fill out.</li>
+          <li><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span> <strong>Standard or large print PDF:</strong> Print the standard or large print PDF to fill out by hand.</li>
+        <li><span class="fas fa-volume-up text-muted fa-lg fa-li"></span> <strong>E-text:</strong> Download and use your preferred screen reader to listen to the e-text file. </li>
+		</ul>
 	  </div>
 	  <ul class="fa-ul">
 		<!--Online-->
@@ -82,9 +89,6 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))"><span class="wb-inv">Accessible</span> Fillable PDF (((1)))</a></li>
 		  </ul>
 		</li>
-		<li required="((currentversion)) == true %% true"><span class="fas fa-file-download text-muted fa-lg fa-li"></span> <strong>Fillable PDF: </strong> <a class="wb-lbx"
-          href="#instructions">Download the fillable PDF and open <span class="nowrap">it<span
-          class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher to fill out.</li>
 		<!--Flat-->
 		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
 		  <h3>Print the current form and fill out by hand</h3>
@@ -93,7 +97,6 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Large print PDF (((1)))</a></li>
 		  </ul>
 		</li>
-        <li required="((currentversion)) == true %% true"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span> <strong>Standard or large print PDF:</strong> Print the standard or large print PDF to fill out by hand.</li>
 		<!--E-text-->
 		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
 		  <h3>Download the current form and listen</h3>
@@ -102,8 +105,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">E-text (((1)))</a></li>
 		  </ul>
 		</li>
-        <li required="((currentversion)) == true %% true"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span> <strong>E-text:</strong> Download and use your preferred screen reader to listen to the e-text file. </li>
-		<!--Order Alt Format - when current version is true-->
+		<!--Order Alt Format - when form is current-->
 		<li required="((currentversion)) %% ((pdf)) || ((currentversion)) %% ((pdfFillable)) || ((currentversion)) %% ((largePrint)) || ((currentversion)) %% ((eText))"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
 			<h3>Ask for an alternate format</h3>
@@ -355,6 +357,7 @@ data-wb-tables='{
 			</template>
 		  </section>
 		</li>
+		<!--Order Alt Format - when form is **NOT** current-->
 		<li required="((currentversion)) == true %% true"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
 			<h3>Ask for an alternate format</h3>
@@ -364,7 +367,7 @@ data-wb-tables='{
 			</ul>
 		  </section>
 		</li>
-		<!-- Archive section -->
+		<!-- Archive block -->
 		<li><span class="fas fa-archive text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="{{ site.baseurl }}/source/data/archived-lac.txt #lac-en"></section>
 		</li>
