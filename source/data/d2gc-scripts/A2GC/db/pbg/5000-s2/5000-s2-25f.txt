@@ -1,0 +1,81 @@
+﻿5000-S2
+
+Protégé B une fois rempli
+
+T1-2025
+
+Annexe 2
+
+Montants fédéraux transférés de votre époux ou conjoint de fait
+
+Remplissez cette annexe pour demander un transfert de la partie inutilisée des montants fédéraux, indiqués ci-dessous, auxquels votre époux ou conjoint de fait a droit.
+
+Vous pourriez avoir le droit de demander une partie ou la totalité de certains montants auxquels votre époux ou conjoint de fait a droit, s'il n'a pas besoin de les utiliser pour réduire son impôt fédéral à zéro.
+
+Remplissez l'annexe (S2) provinciale ou territoriale pour calculer vos montants provinciaux ou territoriaux.
+
+Si, en raison de la rupture de votre union, vous avez vécu séparément pendant une période de 90 jours ou plus qui inclut le 31 décembre 2025, votre époux ou conjoint de fait ne peut pas vous transférer les montants inutilisés.
+
+Si votre époux ou conjoint de fait produit une déclaration, utilisez les montants qu'il a inscrits dans sa déclaration.
+
+Si votre époux ou conjoint de fait ne produit pas de déclaration, utilisez les montants qu'il inscrirait dans sa déclaration, ses annexes et ses feuilles de travail comme s'il produisait une déclaration, et joignez ses feuillets de renseignements.
+
+Joignez une copie de cette annexe à votre déclaration papier.
+
+Montant en raison de l'âge (si votre époux ou conjoint de fait est né en 1960 ou avant):
+Ligne 1 et ligne 35200: Inscrivez le montant de la ligne 30100 de sa déclaration. ^
+
+Montant canadien pour aidant naturel pour enfants âgés de moins de 18 ans ayant une infirmité:
+Ligne 2 et ligne 35300: Inscrivez le montant de la ligne 30500 de sa déclaration. ^
+
+Montant pour revenu de pension:
+Ligne 3 et ligne 35500: Inscrivez le montant de la ligne 31400 de sa déclaration. (maximum $2,000) ^
+
+Montant pour personnes handicapées:
+Ligne 4 et ligne 35700: Inscrivez le montant de la ligne 31600 de sa déclaration. (Note 1) ^
+
+Frais de scolarité:
+Ligne 5 et ligne 36000: Inscrivez le montant fédéral qui vous est désigné selon ses formulaires T2202, TL11A ou TL11C. (Note 2) ^
+
+Ligne 6: Additionnez les lignes 1 à 5. = ^
+
+Revenu imposable de votre époux ou conjoint de fait:
+Ligne 7: Inscrivez le montant de la ligne 26000 de sa déclaration à la ligne 7 s'il est de $57,375 ou moins. S'il est plus de $57,375, inscrivez le résultat du calcul suivant: montant de la ligne 76 de sa déclaration ^
+divisé par 14.5% = ^
+
+Ligne 8: Montant de la ligne 30000 de sa déclaration ^
+
+Ligne 9: Montant de la ligne 96 de sa déclaration ^
+
+Ligne 10: Montant de la ligne 32300 de sa déclaration ^
+
+Ligne 11: Additionnez les lignes 8 à 10. = ^
+
+Revenu imposable rajusté de votre époux ou conjoint de fait:
+Ligne 12 et ligne 36100: Ligne 7 moins ligne 11 (si négatif, inscrivez "0") = ^
+
+Ligne 13: Ligne 6 moins ligne 12 (si négatif, inscrivez "0") Inscrivez ce montant à la ligne 32600 de votre déclaration. Montants fédéraux transférés de votre époux ou conjoint de fait = ^
+
+Note 1:
+Si le montant pour personnes handicapées se rapporte à une nouvelle demande, joignez à votre déclaration papier le formulaire T2201, Certificat pour le crédit d'impôt pour personnes handicapées, correctement rempli et attesté.
+
+L'Agence du revenu du Canada (ARC) examinera votre demande pour déterminer si votre époux ou conjoint de fait est admissible au crédit d'impôt pour personnes handicapées avant d'établir la cotisation de votre déclaration. S'il était admissible en 2024 et qu'il remplit toujours les conditions exigées en 2025, vous n'avez pas besoin d'envoyer à l'ARC un nouveau formulaire T2201 pour demander ce montant. Toutefois, vous devez envoyer à l'ARC un nouveau formulaire T2201 si la période d'approbation précédente s'est terminée avant 2025 ou si l'ARC vous le demande.
+
+Note 2:
+Le montant maximal de frais de scolarité que votre époux ou conjoint de fait peut vous transférer est de $5,000 moins les montants de l'année courante qu'il utilise, même si une partie des frais de l'année est inutilisée.
+
+Votre époux ou conjoint de fait ne peut pas vous transférer ses frais de scolarité qui proviennent des années passées.
+
+Consultez l'avis de confidentialité dans votre déclaration.
+
+
+
+
+
+
+
+
+
+
+
+

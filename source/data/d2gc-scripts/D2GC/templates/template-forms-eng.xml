@@ -20,7 +20,7 @@ Modified date: August 1, 2023
 		<title>((name)).ToUpper() ((title))</title>
 		<altTitle source="((Custom.Key))" remove="-e" add="-f"  type="end">((name)).ToUpper() ((title))</altTitle>
 		<unique val="e@@true@@true">((language))@@((pbg))@@((currentVersion))</unique>
-		<excludes val="t3010@@t1134@@t2203">((name))@@((name))@@((name))</excludes> 
+		<excludes val="50*@@t3010@@t1134@@t2203">((name))@@((name))@@((name))@@((name))</excludes> 
 		<meta name="keywords">((keywords))</meta>
 		<meta name="description">((description))</meta>
 		<meta name="subject">((subject))</meta>
