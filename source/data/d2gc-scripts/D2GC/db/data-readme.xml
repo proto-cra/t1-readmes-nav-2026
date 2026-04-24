@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<edds>
+    <Rrc4065-e>
+        <language>e</language>
+        <name>rc4065</name>
+		<upname>RC4065</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Medical Expenses - 2025</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description>This guide is for people with medical expenses. It contains a list of the eligible medical expenses.</description>
+        <subject>medical expenses, caregivers, nursing home, medical devices</subject>
+        <keywords>RC4065, medical expenses, individual, people with disability, medical practitioner, nursing home, medical devices</keywords>
+        <path>/pub/rc4065</path>
+        <notice/>
+        <html>medical-expenses.html</html>
+        <pdf>rc4065-25e.pdf:206.05KB:30:</pdf>
+        <pdfFillable/>
+        <eText/>
+        <largePrint>rc4065-lp-25e.pdf:</largePrint>
+        <braille/>
+        <priorYear/>
+        <pub>true</pub>
+        <pbg/>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>true</currentversion>
+    </Rrc4065-e>
+    <Rrc4065-f>
+        <language>f</language>
+        <name>rc4065</name>
+		<upname>RC4065</upname>
+        <ajaxid/>
+        <menucode/>
+        <contributor>ABSB/HID/IPD/STBIS/BEN; ABSB/HID/IPD/QAAS</contributor>
+        <contentprovider>BENPRESTG@cra-arc.gc.ca; QA-AQ-G@cra-arc.gc.ca</contentprovider>
+        <title>Frais médicaux - 2025</title>
+        <related_documents/>
+        <pubDate>2026-01-20</pubDate>
+        <correctionDate>2026-04-23</correctionDate>
+        <lastUpdated/>
+        <revYear>25</revYear>
+        <revMonth/>
+        <description>Ce guide s'adresse aux personnes qui ont des frais médicaux. Il contient une liste des frais médicaux admissibles.</description>
+        <subject>frais médicaux, préposé aux soins, maison de santé, appareil médical</subject>
+        <keywords>RC4065, frais médicaux, particulier, personne handicapée, médecin, préposé aux soins, maison de santé, appareil médical</keywords>
+        <path>/pub/rc4065</path>
+        <notice/>
+        <html>frais-medicaux.html</html>
+        <pdf>rc4065-25f.pdf:259.79ko:33:</pdf>
+        <pdfFillable/>
+        <eText/>
+        <largePrint>rc4065-lp-25f.pdf:</largePrint>
+        <braille/>
+        <priorYear/>
+        <pub>true</pub>
+        <pbg/>
+        <noChildPages/>
+        <availableInPrint/>
+        <currentversion>true</currentversion>
+    </Rrc4065-f>
+</edds>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

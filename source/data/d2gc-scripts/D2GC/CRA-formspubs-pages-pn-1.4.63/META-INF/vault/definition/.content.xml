@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:created="{Date}2017-06-28T14:54:05.048-04:00"
+    jcr:createdBy="sandy.deroche"
+    jcr:description=""
+    jcr:lastModified="{Date}2017-06-28T14:54:05.048-04:00"
+    jcr:lastModifiedBy="sandy.deroche"
+    jcr:primaryType="vlt:PackageDefinition"
+    buildCount="1"
+    builtWith="Adobe Experience Manager-6.1.0.SP1"
+    group="my_packages"
+    lastUnwrapped="{Date}2017-06-28T14:54:05.048-04:00"
+    lastUnwrappedBy="sandy.deroche"
+    lastWrapped="{Date}2017-06-28T14:54:05.048-04:00"
+    lastWrappedBy="sandy.deroche"
+    name="Sandy"
+    version="1.0">
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/content/canadasite/en/revenue-agency/services/tax/individuals/community-volunteer-income-tax-program/clinic1-southend"
+            rules="[]"/>
+    </filter>
+</jcr:root>
