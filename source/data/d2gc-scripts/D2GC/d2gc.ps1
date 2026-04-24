@@ -744,7 +744,8 @@ function setWrapper ($array, $json) {
     $text = replaceSquareBrackets $text
     foreach ($attr in $array.attributes) {
         if ( $attr.Name -ne "required" -and $attr.Name -ne "split" -and $attr.Name -ne "source" -and $attr.Name -ne "sub" -and $attr.Name -ne "header" -and $attr.Name -ne "for" -and $attr.Name -ne "break" -and $attr.Name -ne "hash" -and $attr.Name -ne "sort" -and $attr.Name -ne "includes" -and $attr.Name -ne "exclude") {
-            $attrib += ($attr.Name) + "=""" + ($attr."#text") + """ "
+            $attrText = [System.Net.WebUtility]::HtmlEncode($attr."#text")
+            $attrib += ($attr.Name) + "=""" + $attrText + """ "
         }
     }
 
