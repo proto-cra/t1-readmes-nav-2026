@@ -355,7 +355,7 @@ data-wb-tables='{
 			</template>
 		  </section>
 		</li>
-		<li required="((currentversion)) == true %% true">
+		<li required="((currentversion)) == true %% true"><span class="fas fa-universal-access text-muted fa-lg fa-li"></span>
 		  <section data-ajax-replace="/content/dam/cra-arc/formspubs/include/altformat.txt#altformat-eng">
 			<h3>Ask for an alternate format</h3>
 			<p>You can order alternate formats such as digital audio, electronic text, braille, and large print.</p>
