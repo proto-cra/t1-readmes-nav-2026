@@ -892,6 +892,118 @@ function Get-ObjectMembers {
     }
 }
 
+function Get-FullYearFromRevYear($revYear) {
+    if (!$revYear) { return $null }
+
+    $yearText = [string]$revYear
+    if ($yearText -match '^[0-9]{4}$') {
+        return [int]$yearText
+    }
+
+    if ($yearText -match '^[0-9]{2}$') {
+        $year = [int]$yearText
+        if ($year -ge 80) { return 1900 + $year }
+        return 2000 + $year
+    }
+
+    return $null
+}
+
+function Test-RecentPriorYears($priorYear, $revYear) {
+    if (!$priorYear) { return $false }
+
+    $priorYearText = [string]$priorYear
+    if ([string]::IsNullOrWhiteSpace($priorYearText)) { return $false }
+
+    # Preserve the old boolean-style data until the upstream XML sends year:file entries.
+    if ($priorYearText -eq "true") { return $true }
+
+    $currentYear = Get-FullYearFromRevYear $revYear
+    if (!$currentYear) { return $false }
+
+    $firstPriorYear = $currentYear - 9
+    $lastPriorYear = $currentYear - 1
+
+    foreach ($item in ($priorYearText -split ";")) {
+        if ($item -match "^([0-9]{4}):") {
+            $year = [int]$matches[1]
+            if ($year -ge $firstPriorYear -and $year -le $lastPriorYear) {
+                return $true
+            }
+        }
+    }
+
+    return $false
+}
+
+function Add-RecentPriorYears($obj) {
+    if (!$obj -or $obj -is [string]) { return }
+
+    $properties = @($obj.PSObject.Properties.Name)
+    if ($properties -contains "priorYear") {
+        $value = $null
+        if (Test-RecentPriorYears $obj.priorYear $obj.revYear) {
+            $value = "true"
+        }
+
+        if ($properties -contains "recentPriorYears") {
+            $obj.recentPriorYears = $value
+        } else {
+            $obj | Add-Member -MemberType NoteProperty -Name "recentPriorYears" -Value $value
+        }
+    }
+
+    foreach ($property in $obj.PSObject.Properties) {
+        if ($property.Value -is [PSCustomObject]) {
+            Add-RecentPriorYears $property.Value
+        } elseif ($property.Value -is [System.Object[]]) {
+            foreach ($item in $property.Value) {
+                Add-RecentPriorYears $item
+            }
+        }
+    }
+}
+
+function Update-RecentPriorYearsInReadme($path) {
+    if (!(Test-Path $path)) { return }
+
+    $lines = Get-Content $path -Encoding UTF8
+    $updated = New-Object System.Collections.ArrayList
+    $currentRevYear = $null
+
+    foreach ($line in $lines) {
+        if ($line -match "<revYear>(.*?)</revYear>") {
+            $currentRevYear = $matches[1]
+        }
+
+        if ($line -match "^\s*<priorYear>(.*?)</priorYear>\s*$") {
+            [void]$updated.Add($line)
+            $indent = [regex]::Match($line, "^\s*").Value
+            if (Test-RecentPriorYears $matches[1] $currentRevYear) {
+                [void]$updated.Add("$indent<recentPriorYears>true</recentPriorYears>")
+            } else {
+                [void]$updated.Add("$indent<recentPriorYears/>")
+            }
+            continue
+        }
+
+        if ($line -match "^\s*<priorYear/>\s*$") {
+            [void]$updated.Add($line)
+            $indent = [regex]::Match($line, "^\s*").Value
+            [void]$updated.Add("$indent<recentPriorYears/>")
+            continue
+        }
+
+        if ($line -match "^\s*(<recentPriorYears>.*?</recentPriorYears>|<recentPriorYears/>)\s*$") {
+            continue
+        }
+
+        [void]$updated.Add($line)
+    }
+
+    Set-Content -Path $path -Value $updated -Encoding UTF8
+}
+
 function isJson($text, $json, $html, $bool) {
 
     while ( $text -like "*((*))*" ) {
@@ -1468,6 +1580,10 @@ If(!($rm -match "<upname>")){$rm | ForEach-Object {$rmRegex.Replace($_, {$args[0
                                                                          $args[0].value.toUpper().Replace("NAME","upname")})} | Set-Content $rmPath -Encoding UTF8}
 Start-Sleep -s 1;
 
+# Add reviewable prior-year availability flag for the 9 previous years.
+Update-RecentPriorYearsInReadme $rmPath
+Start-Sleep -s 1;
+
 
 Write-Color -Text "D2GC (Data to Government of Canada)" -Color "White"
 Write-Host "-----------------------------------`r`n"
@@ -1592,6 +1708,7 @@ if ($xmlRoot.count -ne 0) {
                 $p = ConvertFrom-Xml -InputObject $x
                 $p = $p | ConvertTo-Json -Compress
                 $p = ParseJsonString $p
+                Add-RecentPriorYears $p
             }
             elseif ($ext -eq ".json") {
                 $p = ParseJsonFile $p
@@ -1615,6 +1732,7 @@ if ($xmlRoot.count -ne 0) {
                 $pAlt = ConvertFrom-Xml -InputObject $xAlt
                 $pAlt = $pAlt | ConvertTo-Json -Compress
                 $pAlt = ParseJsonString $pAlt
+                Add-RecentPriorYears $pAlt
             }
             elseif ($extAlt -eq ".json") {
                 $pAlt = ParseJsonFile $pAlt
