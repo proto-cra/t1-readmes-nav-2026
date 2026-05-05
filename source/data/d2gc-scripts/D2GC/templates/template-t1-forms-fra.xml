@@ -120,7 +120,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		  <h3 id="prvs-yrs">Obtenez une version des 9 ann&#233;es pr&#233;c&#233;dentes &#40;<span>((upname))</span>&#41;</h3>
 		  <p>Pour vous assurer d'acc&#233;der au <strong>bon</strong> formulaire, entrez l'<strong>ann&#233;e</strong> dans le filtre du tableau.</p>
 		  <section data-wb-jsonmanager='{
-			  "url": "{{ site.baseurl }}/source/data/forms-json/table-data/((name))-table-data.json#/data",
+			  "url": "/content/canadasite/assets.html/content/dam/cra-arc/formspubs/pbg-table-json/((name))-table-data.json#/data",
 			  "name": "forms"}'></section>
 		  <section class="table-responsive mrgn-tp-lg">
 			<table class="wb-tables table table-striped table-condensed table-hover filterEmphasis provisional" id="year-filter"
@@ -247,7 +247,7 @@ data-wb-tables='{
 }'></section>
 		  <!-- Data source -->
 		  <section id="sourceData" data-wb-jsonmanager='{
-	"url": "{{ site.baseurl }}/source/data/yr-prov.json",
+	"url": "/content/canadasite/assets.html/content/dam/cra-arc/formspubs/include/yr-prov.json",
 	"patches": {
 	  "op": "add",
 	  "path": "/select",
@@ -369,7 +369,7 @@ data-wb-tables='{
 		</li>
 		<!-- Archive block -->
 		<li><span class="fas fa-archive text-muted fa-lg fa-li"></span>
-		  <section data-ajax-replace="{{ site.baseurl }}/source/data/archived-lac.txt #lac-fr"></section>
+		  <section data-ajax-replace="/content/canadasite/assets.html/content/dam/cra-arc/formspubs/include/archived-lac.txt #lac-fr"></section>
 		</li>
 	  </ul>
 	  <!--Related documents-->
