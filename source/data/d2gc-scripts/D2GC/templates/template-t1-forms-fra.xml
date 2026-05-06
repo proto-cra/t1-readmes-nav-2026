@@ -32,7 +32,6 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 	
 	<generic-text>
 	  <h1 id="wb-cont">((name)).ToUpper() ((title))</h1>
-	  <p class="small text-muted">Gabarit T1 d&#233;clench&#233; et utilis&#233;.</p>
 	  <p class="small mrgn-tp-sm"><strong>Vous cherchez peut-&#234;tre : </strong> <a href="/content/canadasite/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations.html">Obtenir une trousse d&#8217;imp&#244;t T1</a></p>
 	  <div class="clearfix" aria-hidden="true"></div>
 	  <!--Rescue link-->
