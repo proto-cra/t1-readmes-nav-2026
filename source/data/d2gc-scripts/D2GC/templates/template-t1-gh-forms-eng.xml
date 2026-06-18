@@ -82,7 +82,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 		<!--Fillable-->
 		<li required="pdfFillable"><span class="fas fa-file-download text-muted fa-lg fa-li"></span>
-		  <h3>Download the current form and fill out using Acrobat Reader</h3>
+		  <h3>Download and fill out using Acrobat Reader</h3>
 		  <p class="mrgn-bttm-md">To complete a fillable form, you <strong>must </strong> <a class="wb-lbx" href="#instructions">download the fillable PDF and open <span class="nowrap">it<span class="far fa-question-circle mrgn-lft-sm"></span></span></a> in Acrobat Reader 10 or higher.</p>
 		  <ul>
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))"><span class="wb-inv">Accessible</span> Fillable PDF (((1)))</a></li>
@@ -90,7 +90,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 		<!--Flat-->
 		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
-		  <h3>Print the current form and fill out by hand</h3>
+		  <h3>Print and fill out by hand</h3>
 		  <ul>
 			<li required="pdf" split=";" sub=":" source="((pdf))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Standard print PDF (((1)))</a></li>
 			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Large print PDF (((1)))</a></li>
@@ -98,7 +98,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 		<!--E-text-->
 		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
-		  <h3>Download the current form and listen</h3>
+		  <h3>Download and listen</h3>
 		  <p>Use your preferred screen reader to listen to the e-text file.</p>
 		  <ul>
 			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">E-text (((1)))</a></li>
