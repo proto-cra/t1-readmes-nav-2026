@@ -117,7 +117,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		<!-- Previous year versions section -->
 		<li required="recentPriorYears"><span class="fas fa-history text-muted fa-lg fa-li"></span>
 		  <h3 id="prvs-yrs">Get a version from the 9 previous years &#40;<span>((upname))</span>&#41;</h3>
-		  <p>To ensure you access the <strong>correct</strong> form, enter the <strong>year </strong>in the table filter.</p>
+          <p>Enter the <strong>year</strong> in the filter to find the <strong>correct</strong> form.</p>
 		  <section data-wb-jsonmanager='{
 			  "url": "/content/dam/cra-arc/formspubs/pbg-table-json/((name))-table-data.json#/data",
 			  "name": "forms"}'></section>
