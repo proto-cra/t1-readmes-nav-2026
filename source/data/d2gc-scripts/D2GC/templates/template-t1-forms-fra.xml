@@ -82,7 +82,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 		<!--Fillable-->
 		<li required="pdfFillable"><span class="fas fa-file-download text-muted fa-lg fa-li"></span>
-		  <h3>T&#233;l&#233;chargez le formulaire actuel et <span class="nowrap">remplissez-le</span> &#224; l'aide d'Acrobat Reader</h3>
+		  <h3>T&#233;l&#233;chargez le formulaire et <span class="nowrap">remplissez-le</span> &#224; l'aide d'Acrobat Reader</h3>
 		  <p class="mrgn-bttm-md">Pour remplir le formulaire, vous <strong>devez </strong><a class="wb-lbx" href="#instructions">t&#233;l&#233;charger et ouvrir le formulaire PDF &#224; <span class="nowrap">remplir<span class="far fa-question-circle mrgn-lft-sm"></span></span></a> dans Acrobat Reader 10 ou dans une version plus r&#233;cente.</p>
 		  <ul>
 			<li required="pdfFillable" split=";" sub=":" source="((pdfFillable))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))" download="((1))">PDF &#224; remplir <span class="wb-inv">accessible</span> (((1)))</a></li>
@@ -90,7 +90,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 			<!--Flat-->
 		<li required="((pdf)) || ((largePrint))"><span class="fas fa-pencil-alt text-muted fa-lg fa-li"></span>
-		  <h3>Imprimez le formulaire actuel et <span class="nowrap">remplissez-le</span> &#224; la main</h3>
+		  <h3>Imprimez le formulaire et <span class="nowrap">remplissez-le</span> &#224; la main</h3>
 		  <ul>
 			<li required="pdf" split=";" sub=":" source="((pdf))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">PDF en caract&#232;res standards (((1)))</a></li>
 			<li required="largePrint" split=";" sub=":" source="((largePrint))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">PDF en gros caract&#232;res (((1)))</a></li>
@@ -98,7 +98,7 @@ Created for t1-readmes-nav-2026 T1 form pages that only expose current-year link
 		</li>
 			<!--E-text-->
 		<li required="eText"><span class="fas fa-volume-up text-muted fa-lg fa-li"></span>
-		  <h3>T&#233;l&#233;chargez le formulaire actuel et &#233;coutez le texte</h3>
+		  <h3>T&#233;l&#233;chargez le formulaire et &#233;coutez le texte</h3>
 		  <p>Utilisez le lecteur d'&#233;cran de votre choix pour &#233;couter le fichier texte &#233;lectronique.</p>
 		  <ul>
 			<li required="eText" split=";" sub=":" source="((eText))"><a href="/content/dam/cra-arc/formspubs/pbg/((name))/((1))">Texte &#233;lectronique (((1)))</a></li>
