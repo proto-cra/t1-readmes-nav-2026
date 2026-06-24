@@ -14,7 +14,7 @@
     {
       "year": "2024",
       "html_acc_en": ["<span class=\"nowrap\">Non-residents tax information for 2024</span>", "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2024/non-residents/5013-g/income-tax-benefit-guide-non-residents-deemed-residents-canada.html"],
-      "html_acc_fr": ["Renseignements sur l'impôt pour les non-résidents pour 2024", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2024/non-residents/5013-g/guide-impot-prestations-non-residents-residents-reputes-canada.html"],
+      "html_acc_fr": ["Renseignements sur l'impôt <span class=\"nowrap\">pour les non-résidents pour 2024</span>", "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/archivee-trousse-generale-impot-prestations-2024/non-residents/5013-g/guide-impot-prestations-non-residents-residents-reputes-canada.html"],
       "stnd_pdf_en": ["2024 - Standard PDF", "/content/dam/cra-arc/formspubs/pub/5013-g/5013-g-24e.pdf"],
       "stnd_pdf_fr": ["2024 - PDF standard", "/content/dam/cra-arc/formspubs/pub/5013-g/5013-g-24f.pdf"],
       "lrge_pdf_en": ["2024 - Large print PDF", "/content/dam/cra-arc/formspubs/pub/5013-g/5013-g-lp-24e.pdf"],
