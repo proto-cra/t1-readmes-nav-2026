@@ -148,7 +148,7 @@ for (const page of pages) {
   cursor.pages.push(page);
 }
 
-function renderTree(node, pathPrefix = "") {
+function renderTree(node, pathPrefix = "", isSourceDataSection = false) {
   const list = document.createElement("ul");
   list.className = "lst-spcd sitemap-list";
 
@@ -158,7 +158,7 @@ function renderTree(node, pathPrefix = "") {
   for (const folderName of folderNames) {
     const folder = node.folders.get(folderName);
     const collapsedFolder = collapseFolder(folder);
-    list.appendChild(renderFolderItem(collapsedFolder, pathPrefix));
+    list.appendChild(renderFolderItem(collapsedFolder, pathPrefix, isSourceDataSection));
     pathPrefix = "";
   }
 
@@ -243,14 +243,15 @@ function appendPageItems(list, pagesToRender) {
   }
 }
 
-function renderFolderItem(collapsedFolder, pathPrefix = "") {
+function renderFolderItem(collapsedFolder, pathPrefix = "", isSourceDataSection = false) {
   const item = document.createElement("li");
   const code = document.createElement("code");
-  const childTree = renderTree(collapsedFolder.node);
   const label = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
+  const shouldUseExHide = isSourceDataSection || collapsedFolder.path === "source/data";
+  const childTree = renderTree(collapsedFolder.node, "", shouldUseExHide);
 
   code.textContent = label;
-  if (collapsedFolder.path === "source/data") {
+  if (shouldUseExHide) {
     const details = document.createElement("details");
     const summary = document.createElement("summary");
 
