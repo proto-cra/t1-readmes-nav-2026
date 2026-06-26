@@ -245,23 +245,17 @@ function appendPageItems(list, pagesToRender) {
 
 function renderFolderItem(collapsedFolder, pathPrefix = "") {
   const item = document.createElement("li");
-  const code = document.createElement("code");
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
   const childTree = renderTree(collapsedFolder.node);
+  const label = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
 
-  code.textContent = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
-  if (collapsedFolder.path === "source/data") {
-    // Data files are noisy, so keep that branch collapsed until opened.
-    const details = document.createElement("details");
-    const summary = document.createElement("summary");
-
-    summary.appendChild(code);
-    details.appendChild(summary);
-    details.appendChild(childTree);
-    item.appendChild(details);
-  } else {
-    item.appendChild(code);
-    item.appendChild(childTree);
-  }
+  details.className = "ex-hide";
+  summary.className = "wb-toggle";
+  summary.textContent = label;
+  details.appendChild(summary);
+  details.appendChild(childTree);
+  item.appendChild(details);
 
   return item;
 }
