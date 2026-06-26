@@ -245,17 +245,25 @@ function appendPageItems(list, pagesToRender) {
 
 function renderFolderItem(collapsedFolder, pathPrefix = "") {
   const item = document.createElement("li");
-  const details = document.createElement("details");
-  const summary = document.createElement("summary");
+  const code = document.createElement("code");
   const childTree = renderTree(collapsedFolder.node);
   const label = pathPrefix ? `${pathPrefix}/${collapsedFolder.label}` : collapsedFolder.label;
 
-  details.className = "ex-hide";
-  summary.className = "wb-toggle";
-  summary.textContent = label;
-  details.appendChild(summary);
-  details.appendChild(childTree);
-  item.appendChild(details);
+  code.textContent = label;
+  if (collapsedFolder.path === "source/data") {
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+
+    details.className = "ex-hide";
+    summary.className = "wb-toggle";
+    summary.appendChild(code);
+    details.appendChild(summary);
+    details.appendChild(childTree);
+    item.appendChild(details);
+  } else {
+    item.appendChild(code);
+    item.appendChild(childTree);
+  }
 
   return item;
 }
